@@ -1,0 +1,17 @@
+{
+    "QJNN_DailyTaskClaim": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_daily_task_claim",
+        "max_hit": 1,
+        "timeout": 180000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "每日任务：检查一键领取，最多领取4轮。",
+            "Node.Action.Succeeded": "每日任务奖励已领完并确认返回HOME。",
+            "Node.Action.Failed": "每日任务状态未确认，已保存诊断并SafeStop。"
+        }
+    }
+}

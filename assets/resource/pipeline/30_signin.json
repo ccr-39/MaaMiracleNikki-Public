@@ -1,0 +1,596 @@
+{
+    "QJNN_SigninRewardDebug": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "QJNN_SigninRewardFlow"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[SigninRewardDebug] Starting from current screen"
+        }
+    },
+    "QJNN_Signin": {
+        "next": [
+            "QJNN_SigninRewardPopup",
+            "QJNN_RewardSuitShowcase",
+            "QJNN_RewardClothesScreen",
+            "QJNN_SigninScreenAfterClaim",
+            "QJNN_SigninScreen",
+            "QJNN_SigninHomeToP2"
+        ],
+        "on_error": ["QJNN_SigninFailure"]
+    },
+    "QJNN_SigninHomeToP2": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_home_any_page",
+        "custom_recognition_param": {"strict": true},
+        "action": "Custom",
+        "custom_action": "qjnn_home_navigate",
+        "custom_action_param": {"target_page": "P2"},
+        "next": [
+            "QJNN_SigninOpenCalendar"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninOpenCalendar": {
+        "recognition": "And",
+        "all_of": [
+            {"recognition": "Custom", "custom_recognition": "qjnn_home_any_page", "custom_recognition_param": {"strict": true}},
+            "QJNN_SigninEntryText"
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "target": true,
+        "max_hit": 1,
+        "post_delay": 800,
+        "timeout": 5000,
+        "next": ["QJNN_SigninScreenAfterClaim", "QJNN_SigninScreen"],
+        "on_error": ["QJNN_SigninFailure"]
+    },
+    "QJNN_SigninEntryText": {
+        "recognition": "OCR",
+        "expected": [
+            "签到"
+        ],
+        "threshold": 0.3
+    },
+    "QJNN_SigninPendingBadge": {
+        "recognition": "ColorMatch",
+        "lower": [
+            [
+                210,
+                20,
+                20
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                130,
+                130
+            ]
+        ],
+        "method": 4,
+        "count": 50,
+        "connected": true,
+        "roi": "QJNN_SigninEntryText",
+        "roi_offset": [
+            37,
+            -94,
+            14,
+            41
+        ]
+    },
+    "QJNN_SigninEntry": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    "QJNN_SigninEntryText",
+                    "QJNN_SigninPendingBadge"
+                ],
+                "box_index": 0
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "daily/signin_entry.png",
+                "threshold": 0.95
+            }
+        ],
+        "action": "Click",
+        "target": true,
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "post_delay": 800,
+        "next": [
+            "QJNN_SigninScreenAfterClaim",
+            "QJNN_SigninScreen"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "OCR“签到”右上相对区域检测到待处理红色感叹号；点击 OCR 文字框。"
+        }
+    },
+    "QJNN_SigninSkip": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "focus": {
+            "Node.Recognition.Succeeded": "今日没有可领取的免费签到，正常跳过签到任务。"
+        }
+    },
+    "QJNN_SigninPageContext": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "暖暖月签到"
+                ],
+                "threshold": 0.3
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "daily/signin_page_marker.png",
+                "threshold": 0.85
+            }
+        ],
+        "action": "DoNothing",
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninScreen": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_signin_state",
+        "custom_recognition_param": {
+            "state": "CLAIMABLE"
+        },
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_SigninClaim"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninClaim": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "点击领取"
+                ],
+                "threshold": 0.3
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "daily/signin_claim.png",
+                "threshold": 0.85
+            }
+        ],
+        "action": "Click",
+        "target": true,
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "post_delay": 800,
+        "next": [
+            "QJNN_SigninRewardFlow"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninRewardFlow": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "max_hit": 13,
+        "rate_limit": 800,
+        "timeout": 10000,
+        "next": [
+            "QJNN_SigninRewardPopup",
+            "QJNN_RewardSuitShowcase",
+            "QJNN_RewardClothesScreen",
+            "QJNN_SigninScreenAfterClaim",
+            "QJNN_SigninRewardHome"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Action.Starting": "识别签到领取后的当前奖励状态；未知页面不会执行点击。"
+        }
+    },
+    "QJNN_RewardSuitShowcase": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_reward_suit_showcase",
+        "custom_recognition_param": {
+            "roi": [
+                0,
+                250,
+                720,
+                930
+            ],
+            "threshold": 0.8,
+            "safe_rect": [
+                300,
+                700,
+                120,
+                120
+            ],
+            "depends_on_suit_name": false,
+            "depends_on_progress_text": false
+        },
+        "action": "DoNothing",
+        "next": [
+            "QJNN_RewardSuitShowcaseDismiss"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "已确认完整人物套装展示页；识别不依赖套装名或具体进度数字。"
+        }
+    },
+    "QJNN_RewardSuitShowcaseDismiss": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            300,
+            700,
+            120,
+            120
+        ],
+        "max_hit": 13,
+        "post_delay": 800,
+        "timeout": 10000,
+        "next": [
+            "QJNN_SigninRewardFlow"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Action.Starting": "已确认套装展示页；仅点击屏幕中部安全区一次。"
+        }
+    },
+    "QJNN_RewardClothesScreen": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_reward_clothes_card",
+        "custom_recognition_param": {
+            "roi": [
+                90,
+                285,
+                540,
+                700
+            ],
+            "threshold": 0.65,
+            "reward_card_rect": [
+                103,
+                300,
+                512,
+                680
+            ],
+            "safe_rect": [
+                205,
+                436,
+                308,
+                408
+            ],
+            "share_forbidden_rect": [
+                480,
+                960,
+                220,
+                140
+            ],
+            "depends_on_new_obtained": false
+        },
+        "action": "DoNothing",
+        "next": [
+            "QJNN_RewardClothesSafeDismiss"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_RewardClothesSafeDismiss": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            205,
+            436,
+            308,
+            408
+        ],
+        "max_hit": 13,
+        "post_delay": 800,
+        "timeout": 10000,
+        "next": [
+            "QJNN_SigninRewardFlow"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Action.Starting": "已确认服装/部件获得页；仅点击白色奖励卡片中央安全区一次。"
+        }
+    },
+    "QJNN_SigninRewardPopup": {
+        "recognition": "OCR",
+        "expected": [
+            "恭喜获得",
+            "获得奖励"
+        ],
+        "threshold": 0.3,
+        "roi": [
+            160,
+            80,
+            400,
+            560
+        ],
+        "action": "DoNothing",
+        "next": [
+            "QJNN_SigninRewardDismiss"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninRewardDismiss": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            240,
+            160,
+            240,
+            64
+        ],
+        "max_hit": 13,
+        "post_delay": 800,
+        "timeout": 10000,
+        "next": [
+            "QJNN_SigninRewardDismissConfirm"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninRewardDismissConfirm": {
+        "recognition": "OCR",
+        "expected": [
+            "恭喜获得",
+            "获得奖励"
+        ],
+        "threshold": 0.3,
+        "roi": [
+            160,
+            80,
+            400,
+            560
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "rate_limit": 400,
+        "timeout": 5000,
+        "next": [
+            "QJNN_SigninRewardFlow"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "奖励关闭点击后的新帧已确认‘恭喜获得/获得奖励’消失。"
+        }
+    },
+    "QJNN_SigninRewardHome": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_HomeScreen"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "QJNN_SigninCompletedOnHome"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninScreenAfterClaim": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_signin_state",
+        "custom_recognition_param": {
+            "state": "CLAIMED"
+        },
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "post_delay": 800,
+        "next": [
+            "QJNN_SigninScreen",
+            "QJNN_SigninClaimGone"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninClaimGone": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "点击领取"
+                ],
+                "threshold": 0.3
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "daily/signin_claim.png",
+                "threshold": 0.85
+            }
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_SigninClose"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninClose": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            240,
+            220,
+            240,
+            48
+        ],
+        "max_hit": 1,
+        "post_delay": 800,
+        "next": [
+            "QJNN_HomeAfterSignin"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_HomeAfterSignin": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "暖暖月签到"
+                ],
+                "threshold": 0.3
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "daily/signin_page_marker.png",
+                "threshold": 0.85
+            }
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_SigninCompletedOnHome"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ]
+    },
+    "QJNN_SigninCompletedOnHome": {
+        "recognition": "And",
+        "all_of": [
+            {"recognition": "Custom", "custom_recognition": "qjnn_home_any_page", "custom_recognition_param": {"strict": true}},
+            "QJNN_SigninEntryText"
+        ],
+        "action": "DoNothing",
+        "rate_limit": 400,
+        "timeout": 5000,
+        "next": [
+            "QJNN_SigninCompletedRewardAbsent"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "已确认返回 HOME；签到入口允许继续存在。"
+        }
+    },
+    "QJNN_SigninCompletedRewardAbsent": {
+        "recognition": "OCR",
+        "expected": [
+            "恭喜获得",
+            "获得奖励"
+        ],
+        "threshold": 0.3,
+        "roi": [
+            160,
+            80,
+            400,
+            560
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "rate_limit": 400,
+        "timeout": 5000,
+        "next": [
+            "QJNN_SigninCompletedBadgeAbsent"
+        ],
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "已确认签到奖励标题不存在。"
+        }
+    },
+    "QJNN_SigninCompletedBadgeAbsent": {
+        "recognition": "ColorMatch",
+        "lower": [
+            [
+                210,
+                20,
+                20
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                130,
+                130
+            ]
+        ],
+        "method": 4,
+        "count": 50,
+        "connected": true,
+        "roi": "QJNN_SigninEntryText",
+        "roi_offset": [
+            37,
+            -94,
+            14,
+            41
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "rate_limit": 400,
+        "timeout": 5000,
+        "on_error": [
+            "QJNN_SigninFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "HOME 上签到可领取感叹号已消失，今日签到任务完成。"
+        }
+    },
+    "QJNN_SigninFailure": {
+        "action": "Custom",
+        "custom_action": "qjnn_save_signin_failure",
+        "next": [
+            "QJNN_SafeStop"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "签到 Pipeline 失败，保存最终调试截图后安全停止。"
+        }
+    }
+}

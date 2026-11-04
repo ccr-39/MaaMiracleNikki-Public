@@ -1,0 +1,457 @@
+{
+    "QJNN_Mail": {
+        "next": [
+            "QJNN_MailRewardResume",
+            "QJNN_MailClothesRewardResume",
+            "QJNN_MailSystemScreen",
+            "QJNN_MailHomeScreen"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailRewardResume": {
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": ["^邮箱$"],
+                "threshold": 0.8,
+                "roi": [120, 120, 480, 140]
+            },
+            {
+                "recognition": "OCR",
+                "expected": ["^恭喜获得$", "^获得奖励$"],
+                "threshold": 0.8,
+                "roi": [120, 240, 480, 180]
+            },
+            {
+                "recognition": "OCR",
+                "expected": ["^跳过$", "^确定$"],
+                "threshold": 0.8,
+                "roi": [0, 880, 720, 310]
+            }
+        ],
+        "action": "DoNothing",
+        "max_hit": 1,
+        "next": ["QJNN_MailRewardFlow"],
+        "on_error": ["QJNN_MailFailure"],
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到中断后遗留的邮箱奖励页，接续奖励关闭流程，不再次领取。"
+        }
+    },
+    "QJNN_MailClothesRewardResume": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailPageTitle",
+            {"recognition": "Custom", "custom_recognition": "qjnn_reward_clothes_card"}
+        ],
+        "action": "DoNothing",
+        "max_hit": 1,
+        "next": ["QJNN_MailRewardFlow"],
+        "on_error": ["QJNN_MailFailure"]
+    },
+    "QJNN_MailHomeScreen": {
+        "recognition": "And",
+        "all_of": [
+            {"recognition": "Custom", "custom_recognition": "qjnn_home_any_page", "custom_recognition_param": {"strict": true}}
+        ],
+        "action": "Custom",
+        "custom_action": "qjnn_home_navigate",
+        "custom_action_param": {"target_page": "P2"},
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_MailEntry",
+            "QJNN_MailSkip"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailEntryText": {
+        "recognition": "OCR",
+        "expected": [
+            "邮箱"
+        ],
+        "threshold": 0.3
+    },
+    "QJNN_MailHomePendingBadge": {
+        "recognition": "ColorMatch",
+        "lower": [
+            [
+                210,
+                20,
+                20
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                130,
+                130
+            ]
+        ],
+        "method": 4,
+        "count": 50,
+        "connected": true,
+        "roi": "QJNN_MailEntryText",
+        "roi_offset": [
+            35,
+            -90,
+            75,
+            70
+        ]
+    },
+    "QJNN_MailEntry": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailEntryText",
+            "QJNN_MailHomePendingBadge"
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "target": true,
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "post_delay": 800,
+        "next": [
+            "QJNN_MailSystemScreen"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailSkip": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "focus": {
+            "Node.Recognition.Succeeded": "首页邮箱入口没有待处理通知，正常跳过系统邮件任务。"
+        }
+    },
+    "QJNN_MailPageTitle": {
+        "recognition": "OCR",
+        "expected": [
+            "邮箱"
+        ],
+        "threshold": 0.3
+    },
+    "QJNN_MailSystemTabText": {
+        "recognition": "OCR",
+        "expected": [
+            "系统邮件"
+        ],
+        "threshold": 0.3
+    },
+    "QJNN_MailSystemPendingBadge": {
+        "recognition": "ColorMatch",
+        "lower": [
+            [
+                210,
+                20,
+                20
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                130,
+                130
+            ]
+        ],
+        "method": 4,
+        "count": 50,
+        "connected": true,
+        "roi": "QJNN_MailSystemTabText",
+        "roi_offset": [
+            85,
+            -50,
+            -50,
+            20
+        ]
+    },
+    "QJNN_MailSystemBadgeGone": {
+        "recognition": "ColorMatch",
+        "lower": [
+            [
+                210,
+                20,
+                20
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                130,
+                130
+            ]
+        ],
+        "method": 4,
+        "count": 50,
+        "connected": true,
+        "roi": "QJNN_MailSystemTabText",
+        "roi_offset": [
+            85,
+            -50,
+            -50,
+            20
+        ],
+        "inverse": true,
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 20000,
+        "next": [
+            "QJNN_MailSystemDone"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailSystemScreen": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailPageTitle",
+            "QJNN_MailSystemTabText"
+        ],
+        "action": "Click",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_MailSystemSelected"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ],
+        "box_index": 1,
+        "target": true,
+        "max_hit": 1,
+        "post_delay": 800
+    },
+    "QJNN_MailSystemPending": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailSystemTabText",
+            "QJNN_MailSystemPendingBadge",
+            "QJNN_MailSystemTabSelected"
+        ],
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_MailClaimAll"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailClaimAll": {
+        "recognition": "OCR",
+        "expected": [
+            "一键领取",
+            "键领取"
+        ],
+        "threshold": 0.3,
+        "action": "Click",
+        "target": true,
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "timeout": 20000,
+        "post_delay": 800,
+        "next": [
+            "QJNN_MailRewardFlow",
+            "QJNN_MailNoClaimable"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailRewardFlow": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_mail_rewards",
+        "max_hit": 1,
+        "timeout": 60000,
+        "next": ["QJNN_MailRewardSystemReady", "QJNN_MailRewardHomeClear"],
+        "on_error": ["QJNN_MailFailure"]
+    },
+    "QJNN_MailRewardSystemReady": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailPageTitle",
+            "QJNN_MailSystemTabText",
+            "QJNN_MailSystemTabSelected"
+        ],
+        "action": "DoNothing",
+        "timeout": 20000,
+        "next": ["QJNN_MailSystemBadgeGone"],
+        "on_error": ["QJNN_MailFailure"]
+    },
+    "QJNN_MailRewardHomeClear": {
+        "recognition": "OCR",
+        "expected": ["系统邮件", "邮件奖励已领取", "删除"],
+        "threshold": 0.3,
+        "inverse": true,
+        "action": "DoNothing",
+        "timeout": 15000,
+        "next": ["QJNN_HomeAfterMail"],
+        "on_error": ["QJNN_MailFailure"]
+    },
+    "QJNN_MailRewardSkip": {
+        "recognition": "OCR",
+        "expected": [
+            "跳过"
+        ],
+        "threshold": 0.3,
+        "action": "DoNothing",
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "timeout": 20000,
+        "post_delay": 800,
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailRewardConfirm": {
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "threshold": 0.3,
+        "action": "DoNothing",
+        "max_hit": 1,
+        "rate_limit": 1000,
+        "timeout": 30000,
+        "post_delay": 800,
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailNoClaimable": {
+        "recognition": "OCR",
+        "expected": [
+            "没有可领取的奖励"
+        ],
+        "threshold": 0.3,
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_MailClose"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到没有可领取的奖励，作为系统邮件已完成的辅助确认。"
+        }
+    },
+    "QJNN_MailSystemDone": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailPageTitle",
+            "QJNN_MailSystemTabText",
+            "QJNN_MailSystemTabSelected"
+        ],
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 20000,
+        "next": [
+            "QJNN_MailClose"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_MailClose": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            240,
+            120,
+            240,
+            48
+        ],
+        "max_hit": 1,
+        "post_delay": 800,
+        "next": [
+            "QJNN_MailRewardHomeClear"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_HomeAfterMail": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_HomeScreen"
+        ],
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "on_error": [
+            "QJNN_MailFailure"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "邮箱弹窗已关闭并重新确认首页；系统邮件任务完成。"
+        }
+    },
+    "QJNN_MailFailure": {
+        "action": "Custom",
+        "custom_action": "qjnn_save_mail_failure",
+        "next": [
+            "QJNN_SafeStop"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "系统邮件 Pipeline 失败，保存最终调试截图后安全停止。"
+        }
+    },
+    "QJNN_MailSystemTabSelected": {
+        "recognition": "ColorMatch",
+        "roi": "QJNN_MailSystemTabText",
+        "roi_offset": [
+            -5,
+            -8,
+            10,
+            -15
+        ],
+        "lower": [
+            [
+                250,
+                175,
+                135
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                220,
+                205
+            ]
+        ],
+        "method": 4,
+        "count": 100,
+        "connected": true
+    },
+    "QJNN_MailSystemSelected": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailPageTitle",
+            "QJNN_MailSystemTabText",
+            "QJNN_MailSystemTabSelected"
+        ],
+        "action": "DoNothing",
+        "rate_limit": 1000,
+        "timeout": 15000,
+        "next": [
+            "QJNN_MailSystemPending",
+            "QJNN_MailSystemBadgeGone"
+        ],
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    }
+}

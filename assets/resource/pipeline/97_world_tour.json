@@ -1,0 +1,15 @@
+{
+    "QJNN_WorldTour": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_world_tour",
+        "max_hit": 1,
+        "timeout": 240000,
+        "on_error": ["QJNN_SafeStop"],
+        "focus": {
+            "Node.Action.Starting": "[WorldTour] 识别当前位置并恢复免费世界巡游。",
+            "Node.Action.Succeeded": "[WorldTour] 游览中已确认，已返回 HOME P1，completed。",
+            "Node.Action.Failed": "[WorldTour] 状态不明或有限循环超限，保存诊断截图并 SafeStop。"
+        }
+    }
+}

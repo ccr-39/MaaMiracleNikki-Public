@@ -1,0 +1,33 @@
+{
+    "QJNN_LimitedSignin": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_limited_signin",
+        "custom_action_param": {"enabled": false},
+        "timeout": 120000,
+        "on_error": ["QJNN_SafeStop"],
+        "focus": {
+            "Node.Action.Starting": "普通签到已返回主页，检查限时活动签到；没有活动时正常跳过。",
+            "Node.Action.Failed": "限时活动签到状态未确认，保存诊断并安全停止。"
+        }
+    },
+    "QJNN_LimitedSigninResume": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_limited_signin_page",
+        "action": "Custom",
+        "custom_action": "qjnn_limited_signin",
+        "custom_action_param": {"enabled": false},
+        "timeout": 120000,
+        "on_error": ["QJNN_SafeStop"]
+    },
+    "QJNN_LimitedSigninHome": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_home_any_page",
+        "custom_recognition_param": {"strict": true},
+        "action": "DoNothing"
+    },
+    "QJNN_LimitedSigninRewardSettled": {
+        "recognition": "DirectHit",
+        "action": "DoNothing"
+    }
+}

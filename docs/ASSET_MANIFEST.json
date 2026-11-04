@@ -1,0 +1,455 @@
+[
+  {
+    "path": "assets/resource/image/alliance/commission_back_arrow.png",
+    "size": [
+      118,
+      120
+    ],
+    "sha256": "5014128deff0b1d6d4f11fd994803bc3523a3692a8b47c3b2968bdbd96347c6e",
+    "references": [
+      {
+        "file": "agent/qjnn_alliance_commission.py",
+        "lines": [
+          23
+        ]
+      },
+      {
+        "file": "agent/qjnn_back_to_home.py",
+        "lines": [
+          73
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/alliance/top_back_arrow.png",
+    "size": [
+      118,
+      122
+    ],
+    "sha256": "b7e7856f4f5c88df6e5e61372e868e00e56aaf8d7c42d2ff845f25e3ee7251fa",
+    "references": [
+      {
+        "file": "agent/qjnn_back_to_home.py",
+        "lines": [
+          72
+        ]
+      },
+      {
+        "file": "agent/qjnn_dreamweaver_commission.py",
+        "lines": [
+          36
+        ]
+      },
+      {
+        "file": "agent/qjnn_library.py",
+        "lines": [
+          33
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/arena/back_button.png",
+    "size": [
+      106,
+      108
+    ],
+    "sha256": "afc7f01f8a6506c58dc0e273c45c034fa2eae8009ef4284c930b83a367dbadc5",
+    "references": [
+      {
+        "file": "agent/qjnn_arena.py",
+        "lines": [
+          38
+        ]
+      },
+      {
+        "file": "agent/qjnn_back_to_home.py",
+        "lines": [
+          75,
+          76,
+          77
+        ]
+      },
+      {
+        "file": "agent/qjnn_competition.py",
+        "lines": [
+          46,
+          54
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/common/chapter_back_arrow.png",
+    "size": [
+      118,
+      122
+    ],
+    "sha256": "c025235b9a94eb4f82279eed3615d29755f81df551bfffb882ef7e3938bb1e14",
+    "references": [
+      {
+        "file": "agent/qjnn_back_to_home.py",
+        "lines": [
+          74
+        ]
+      },
+      {
+        "file": "agent/qjnn_dreamweaver_commission.py",
+        "lines": [
+          1915
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/competition/home_back_button.png",
+    "size": [
+      110,
+      110
+    ],
+    "sha256": "0f1b8de70c06fcbe9bea2ee7cfc975cd10b547305aec2639670d39b793656345",
+    "references": [
+      {
+        "file": "agent/qjnn_back_to_home.py",
+        "lines": [
+          76
+        ]
+      },
+      {
+        "file": "agent/qjnn_competition.py",
+        "lines": [
+          54
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/competition/judge_back_button.png",
+    "size": [
+      52,
+      64
+    ],
+    "sha256": "357a076472f92454e4250243b0a8e1aa0bf47f24c343ebe577e03f82cf2cf2dd",
+    "references": [
+      {
+        "file": "agent/qjnn_back_to_home.py",
+        "lines": [
+          77
+        ]
+      },
+      {
+        "file": "agent/qjnn_competition.py",
+        "lines": [
+          46
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/competition/like_thumb.png",
+    "size": [
+      43,
+      43
+    ],
+    "sha256": "13896002d6b52337da224bce4705a45f4e6f6b8e1b90c9f4cf67b6725afa7f6f",
+    "references": [
+      {
+        "file": "agent/qjnn_competition.py",
+        "lines": [
+          57
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/daily/makeup_diamond.png",
+    "size": [
+      13,
+      15
+    ],
+    "sha256": "6bbebb7abf73053a2712a2921c16a5446e648e96b36d9241e39f780b7faa4209",
+    "references": [
+      {
+        "file": "agent/qjnn_signin_makeup.py",
+        "lines": [
+          24
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/daily/signin_claim.png",
+    "size": [
+      95,
+      35
+    ],
+    "sha256": "a7fca70de8ff433f417f05f5c161191461e0c9a38fe7a2e07bdb6920be375f44",
+    "references": [
+      {
+        "file": "assets/resource/pipeline/30_signin.json",
+        "lines": [
+          179,
+          440
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/daily/signin_entry.png",
+    "size": [
+      78,
+      104
+    ],
+    "sha256": "47d458c19f3d5b627121527a6a3bb3405dd55a40c44f1a52cb2a5bf51008fb7f",
+    "references": [
+      {
+        "file": "agent/qjnn_privacy.py",
+        "lines": [
+          27
+        ]
+      },
+      {
+        "file": "assets/resource/pipeline/30_signin.json",
+        "lines": [
+          102
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/daily/signin_page_marker.png",
+    "size": [
+      419,
+      51
+    ],
+    "sha256": "408dce2c253d6d753ea164856bb2381952c943d8a7bc0ca127e61b4d8d66d4d2",
+    "references": [
+      {
+        "file": "assets/resource/pipeline/30_signin.json",
+        "lines": [
+          142,
+          485
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/decompose/workshop_back_arrow.png",
+    "size": [
+      44,
+      35
+    ],
+    "sha256": "19069b2b4ce68a3d512907c269d5243578b82a14edd7a112de3d9bce03deb400",
+    "references": [
+      {
+        "file": "agent/qjnn_decompose.py",
+        "lines": [
+          180
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/dreamweaver/missing_clothes_plus.png",
+    "size": [
+      42,
+      43
+    ],
+    "sha256": "1b408005926872529cc69eec7d22c19647b31c471a455ccfc49923702d684cb0",
+    "references": [
+      {
+        "file": "agent/qjnn_dreamweaver_commission.py",
+        "lines": [
+          1835
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/dreamweaver/purchase_plus_one.png",
+    "size": [
+      73,
+      73
+    ],
+    "sha256": "294f39c4661e06b029ba226373a884f10a0083e0de486d56108a06b5677b6bf3",
+    "references": [
+      {
+        "file": "agent/qjnn_dreamweaver_commission.py",
+        "lines": [
+          434
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/home_pages/current_theme/left_arrow.png",
+    "size": [
+      43,
+      48
+    ],
+    "sha256": "8631e4794200b7196361e68b0c491834b5ee308979a92d65ec166520598c9ead",
+    "references": [
+      {
+        "file": "agent/qjnn_home.py",
+        "lines": [
+          42
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/home_pages/current_theme/right_arrow.png",
+    "size": [
+      43,
+      48
+    ],
+    "sha256": "945095852a126ef41e17cfb49921d94eae2809aa7a48b84bcc729456a77e0d55",
+    "references": [
+      {
+        "file": "agent/qjnn_home.py",
+        "lines": [
+          43
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/home_random_visit/loading_snowflake_01.png",
+    "size": [
+      65,
+      69
+    ],
+    "sha256": "1efb65415855a756ed25e32e51e749fac240bc6fdee7e7e8baa20c0726cd88de",
+    "references": [
+      {
+        "file": "agent/qjnn_home_random_visit.py",
+        "dynamic": "loading_snowflake_{index:02d}.png, index=1..3"
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/home_random_visit/loading_snowflake_02.png",
+    "size": [
+      65,
+      69
+    ],
+    "sha256": "f397bc97e195fe15bb4049cb478566b6325534875469691365ce6884005c068b",
+    "references": [
+      {
+        "file": "agent/qjnn_home_random_visit.py",
+        "dynamic": "loading_snowflake_{index:02d}.png, index=1..3"
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/home_random_visit/loading_snowflake_03.png",
+    "size": [
+      65,
+      69
+    ],
+    "sha256": "db0e81623b5e605e4a69f0bcf52c7db04537db53a3eef39acc8df22459cd788e",
+    "references": [
+      {
+        "file": "agent/qjnn_home_random_visit.py",
+        "dynamic": "loading_snowflake_{index:02d}.png, index=1..3"
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/start/enter_game_button.png",
+    "size": [
+      548,
+      86
+    ],
+    "sha256": "7d165501915520cf15a0329309a99b7049e3525b9f1fa146863b799515a0caeb",
+    "references": [
+      {
+        "file": "agent/qjnn_privacy.py",
+        "lines": [
+          26
+        ]
+      },
+      {
+        "file": "assets/resource/pipeline/10_startup.json",
+        "lines": [
+          288,
+          350
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/start/start_button.png",
+    "size": [
+      361,
+      155
+    ],
+    "sha256": "11d2d4d05b6500054cc3a6e1aae4ee384916d21c88abbeaa6d735c74ea7cddd5",
+    "references": [
+      {
+        "file": "agent/main.py",
+        "lines": [
+          40
+        ]
+      },
+      {
+        "file": "agent/qjnn_privacy.py",
+        "lines": [
+          25
+        ]
+      },
+      {
+        "file": "agent/qjnn_recognition.py",
+        "lines": [
+          78
+        ]
+      },
+      {
+        "file": "assets/resource/pipeline/10_startup.json",
+        "lines": [
+          225,
+          279
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  },
+  {
+    "path": "assets/resource/image/world_tour/event_collected_stamp.png",
+    "size": [
+      105,
+      90
+    ],
+    "sha256": "691b0ac6dac25078f0941c54333cae9268bc31af4cc18f61c294e1a338f95ec3",
+    "references": [
+      {
+        "file": "agent/qjnn_world_tour.py",
+        "lines": [
+          167
+        ]
+      }
+    ],
+    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+  }
+]

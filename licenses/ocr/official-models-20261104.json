@@ -1,0 +1,20 @@
+[
+  {
+    "file": "det.onnx",
+    "repository": "https://huggingface.co/PaddlePaddle/PP-OCRv6_small_det_onnx",
+    "revision": "28fe5895c24fd108c19eb3e8479f4ab385fbfc62",
+    "sha256": "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e",
+    "license": "Apache-2.0",
+    "modifications": "None; official inference.onnx renamed only",
+    "export_and_optimization": "Vendor-published ONNX; MMN does not export, optimize or change weights"
+  },
+  {
+    "file": "rec.onnx",
+    "repository": "https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec_onnx",
+    "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513",
+    "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634",
+    "license": "Apache-2.0",
+    "modifications": "None; official inference.onnx renamed only",
+    "export_and_optimization": "Vendor-published ONNX; MMN does not export, optimize or change weights"
+  }
+]

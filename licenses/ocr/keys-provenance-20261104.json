@@ -1,0 +1,12 @@
+{
+  "status": "exact official dictionary sequence and bytes reconstructed; Apache-2.0 model repository",
+  "official_repository": "https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec",
+  "official_revision": "bd619643acac4b9650c040234da8d944476ee3f1",
+  "inference_yml_git_blob": "f1887595d177511e6af56fabd0baa25756d33bd8",
+  "inference_yml_sha256": "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1",
+  "character_count": 18708,
+  "transform": "lf_with_final",
+  "local_keys_sha256": "b5f2bfe2bdd9448429e3e82b51c789775d9b42f2403d082b00662eb77e401c5d",
+  "modification": "Extract character_dict in order as UTF-8 newline-delimited entries; no character substitutions",
+  "models_note": "This verifies keys.txt only, not the local ONNX conversion chain."
+}

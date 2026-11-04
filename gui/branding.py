@@ -1,0 +1,10 @@
+"""User-facing product identity, independent of saved task and state identifiers."""
+
+PROJECT_NAME = "MaaMiracleNikki"
+PROJECT_ABBREVIATION = "MMN"
+SOFTWARE_NAME_ZH = "奇迹暖暖小助手"
+SOFTWARE_NAME_EN = "Miracle Nikki Assistant"
+WINDOW_TITLE = f"{PROJECT_ABBREVIATION} - {SOFTWARE_NAME_ZH}"
+PROJECT_DESCRIPTION = "基于 MaaFramework 的《奇迹暖暖》日常自动化工具。"
+REPOSITORY_URL = "https://github.com/ccr-39/MaaMiracleNikki-Public"
+GUI_LOGGER_NAME = "maamiraclenikki.gui"

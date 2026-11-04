@@ -1,0 +1,45 @@
+{
+    "QJNN_ArenaDaily": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "QJNN_ArenaRun"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "识别当前 HOME/ArenaHome/Battle/Reward 状态并安全续跑竞技场日常。"
+        }
+    },
+    "QJNN_ArenaRun": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_arena_daily",
+        "max_hit": 1,
+        "timeout": 240000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "已确认主页 P3，开始识别并执行搭配竞技场。",
+            "Node.Action.Succeeded": "搭配竞技场已完成并确认返回主页 P3。",
+            "Node.Action.Failed": "搭配竞技场状态未知或安全检查失败，停止任务。"
+        }
+    },
+    "QJNN_ArenaExitDebug": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_arena_exit_debug",
+        "max_hit": 1,
+        "timeout": 30000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "从当前页面安全验证竞技场 0/5 退出流程。",
+            "Node.Action.Succeeded": "竞技场退出调试完成并确认回到主页 P3。",
+            "Node.Action.Failed": "当前不是竞技场 0/5 首页或返回验证失败，未执行盲点。"
+        }
+    }
+}

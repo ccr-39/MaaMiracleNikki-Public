@@ -1,0 +1,17 @@
+{
+    "QJNN_HomeLifeBits": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_life_bits",
+        "max_hit": 1,
+        "timeout": 120000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "识别当前 HOME/小屋主页/待领取/奖励/选择/确认/进行中页并从合法状态续跑。",
+            "Node.Action.Succeeded": "生活点滴已有任务运行，已安全关闭面板并确认返回小屋主页。",
+            "Node.Action.Failed": "小屋生活点滴状态未知、验证失败或 SafeRect 尚未实机确认，已保存诊断并安全停止。"
+        }
+    }
+}

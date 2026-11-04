@@ -1,0 +1,132 @@
+[
+  {
+    "name": "rec_onnx_metadata",
+    "url": "https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_small_rec_onnx?blobs=true",
+    "sha256": "7e87990edd180bd83f37c07e9b07a6e59d336657cce1ff83a7b73067d8278687",
+    "bytes": 1481,
+    "ok": true,
+    "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513",
+    "license": "apache-2.0",
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b"
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "1a37eb559d6575f4cd03c8685fcc96cceba3bbb6"
+      },
+      {
+        "rfilename": "inference.json",
+        "blobId": "89267025ba75ceca5c06787979079406a9d92591"
+      },
+      {
+        "rfilename": "inference.onnx",
+        "blobId": "666cee731b98bee55376f02690226d60db9a8187",
+        "lfs": {
+          "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634",
+          "size": 21159378,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "inference.yml",
+        "blobId": "f1887595d177511e6af56fabd0baa25756d33bd8"
+      }
+    ]
+  },
+  {
+    "name": "rec_original_metadata",
+    "url": "https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_small_rec?blobs=true",
+    "sha256": "21d5c8b81d17dc2c399c357144def7e61b1829322fd8b873d32778b7b89c7ab8",
+    "bytes": 1401,
+    "ok": true,
+    "revision": "bd619643acac4b9650c040234da8d944476ee3f1",
+    "license": "apache-2.0",
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "c48a31d8dce80bfbfe392212dc49792e212a6436"
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "57cf82de840da9c778b2d0caab308552d6fa6dcb"
+      },
+      {
+        "rfilename": "inference.json",
+        "blobId": "89267025ba75ceca5c06787979079406a9d92591"
+      },
+      {
+        "rfilename": "inference.pdiparams",
+        "blobId": "a9461d061ab363f11054a67687d62546282c818b",
+        "lfs": {
+          "sha256": "406e1e689c9a7fbb04178007a3fe10cf852afe7bf8bb3bc6dbb9d532b13bd907",
+          "size": 21074618,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "inference.yml",
+        "blobId": "f1887595d177511e6af56fabd0baa25756d33bd8"
+      }
+    ]
+  },
+  {
+    "name": "det_onnx_metadata",
+    "url": "https://huggingface.co/api/models/PaddlePaddle/PP-OCRv6_small_det_onnx?blobs=true",
+    "sha256": "42c4ff0fc9ae1a09e755a7478f47f883a21b39ec67e6ea9d118099b39f20ab3d",
+    "bytes": 1501,
+    "ok": true,
+    "revision": "28fe5895c24fd108c19eb3e8479f4ab385fbfc62",
+    "license": "apache-2.0",
+    "files": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b"
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "6a9d4ebb8a51cbc5032591c7e414eb7d225523dc"
+      },
+      {
+        "rfilename": "inference.json",
+        "blobId": "c3805787b0f6dc65189991f52c0a2ca757918113"
+      },
+      {
+        "rfilename": "inference.onnx",
+        "blobId": "d5d3f5b992066b64c7f6bed8ab402860f4325aaa",
+        "lfs": {
+          "sha256": "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e",
+          "size": 9880512,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "inference.yml",
+        "blobId": "9ce7e05c2621f968d47d4011c04c30cbd91be173"
+      }
+    ]
+  },
+  {
+    "name": "dictionary_inference",
+    "url": "https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec/resolve/main/inference.yml",
+    "sha256": "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1",
+    "bytes": 150579,
+    "ok": true,
+    "dictionary_entries": 18708,
+    "local_entries": 18708,
+    "dictionary_matches": true,
+    "local_prefix_matches": true
+  },
+  {
+    "name": "rec_onnx_inference",
+    "url": "https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec_onnx/resolve/main/inference.yml",
+    "sha256": "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1",
+    "bytes": 150579,
+    "ok": true,
+    "dictionary_entries": 18708,
+    "local_entries": 18708,
+    "dictionary_matches": true,
+    "local_prefix_matches": true
+  }
+]

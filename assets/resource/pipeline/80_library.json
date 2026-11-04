@@ -1,0 +1,17 @@
+{
+    "QJNN_Library": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_library",
+        "max_hit": 1,
+        "timeout": 60000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始执行搭配师联盟图书馆任务。",
+            "Node.Action.Succeeded": "图书馆日常已检查并返回联盟首页。",
+            "Node.Action.Failed": "图书馆任务失败，未继续盲点并安全停止。"
+        }
+    }
+}

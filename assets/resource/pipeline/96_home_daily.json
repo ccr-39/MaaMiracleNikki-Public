@@ -1,0 +1,17 @@
+{
+    "QJNN_HomeDaily": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_daily",
+        "max_hit": 1,
+        "timeout": 420000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "从任意 HOME 页进入一次小屋，依次执行生活点滴和随机拜访 6 次，最后安全退出并回到 HOME P2。",
+            "Node.Action.Succeeded": "小屋完整日常已完成，并确认停留在 HOME P2。",
+            "Node.Action.Failed": "小屋入口、子任务、返回或 HOME P2 导航验证失败；已保存诊断并安全停止。"
+        }
+    }
+}

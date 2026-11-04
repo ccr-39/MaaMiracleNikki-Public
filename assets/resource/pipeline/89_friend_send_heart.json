@@ -1,0 +1,227 @@
+{
+    "QJNN_FriendSendHeart": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_friend_send_heart_click",
+        "custom_action_param": {"mode": "begin"},
+        "next": [
+            "QJNN_FriendSuccessResult",
+            "QJNN_FriendNoTargetResult",
+            "QJNN_FriendScreen",
+            "QJNN_FriendHomeAnyPage"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "正式入口优先识别已知结果；直接恢复好友页只续等可信 attempt，无记录则 SafeStop；从 HOME 正常进入才允许送心。"
+        }
+    },
+    "QJNN_FriendHomeAnyPage": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_home_any_page",
+        "action": "DoNothing",
+        "rate_limit": 800,
+        "timeout": 10000,
+        "next": [
+            "QJNN_FriendEntry"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_FriendHomeAnyPageDebug": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_home_any_page",
+        "action": "DoNothing",
+        "rate_limit": 800,
+        "timeout": 10000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "[FriendHomeAnyPageDebug] HOME matched; no click performed."
+        }
+    },
+    "QJNN_FriendEntry": {
+        "recognition": "OCR",
+        "expected": [
+            "好友"
+        ],
+        "threshold": 0.3,
+        "action": "Custom",
+        "custom_action": "qjnn_friend_send_heart_click",
+        "custom_action_param": {"mode": "entry"},
+        "max_hit": 1,
+        "post_delay": 800,
+        "rate_limit": 800,
+        "timeout": 10000,
+        "next": [
+            "QJNN_FriendScreen"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_FriendScreenTitle": {
+        "recognition": "OCR",
+        "expected": [
+            "好友一览"
+        ],
+        "threshold": 0.3
+    },
+    "QJNN_FriendSendHeartText": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "一键送心"
+                ],
+                "threshold": 0.3
+            },
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "键送心"
+                ],
+                "threshold": 0.3
+            }
+        ],
+        "box_index": 0
+    },
+    "QJNN_FriendScreen": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_FriendScreenTitle",
+            "QJNN_FriendSendHeartText"
+        ],
+        "action": "DoNothing",
+        "rate_limit": 800,
+        "timeout": 12000,
+        "next": [
+            "QJNN_FriendSendHeartClick"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_FriendNoTargetText": {
+        "recognition": "OCR",
+        "expected": [
+            "目前没有可以送心的好友"
+        ],
+        "threshold": 0.7
+    },
+    "QJNN_FriendSuccessResult": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_friend_send_heart_result",
+        "custom_recognition_param": {
+            "kind": "SUCCESS"
+        },
+        "action": "DoNothing",
+        "next": [
+            "QJNN_FriendBack"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "已识别实机确认的动态人数送心成功文案；不再次点击，直接安全返回 HOME。"
+        }
+    },
+    "QJNN_FriendNoTargetResult": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_FriendScreenTitle",
+            "QJNN_FriendSendHeartText",
+            "QJNN_FriendNoTargetText"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "QJNN_FriendBack"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "已识别实机确认的无可送心结果；不再次点击，直接安全返回 HOME。"
+        }
+    },
+    "QJNN_FriendSendHeartClick": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_friend_send_heart_click",
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "QJNN_FriendSendHeartWaitingResult"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_FriendSendHeartWaitingResult": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_friend_send_heart_wait_result",
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "QJNN_FriendSendHeartSuccess"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_FriendSendHeartSuccess": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "QJNN_FriendBack"
+        ],
+        "focus": {
+            "Node.Action.Starting": "已将结果明确分类为 SUCCESS 或 NO_TARGET；不再次点击，安全返回 HOME。"
+        }
+    },
+    "QJNN_FriendBack": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_friend_back",
+        "max_hit": 1,
+        "timeout": 10000,
+        "next": [
+            "QJNN_HomeAfterFriendSendHeart"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_FriendBackDebug": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            {
+                "name": "QJNN_FriendBack",
+                "jump_back": true
+            },
+            "QJNN_HomeAfterFriendSendHeart"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_HomeAfterFriendSendHeart": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_home_any_page",
+        "action": "DoNothing",
+        "rate_limit": 800,
+        "timeout": 12000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "已返回 HOME P1/P2/P3 任意一页，好友一键送心任务完成。"
+        }
+    }
+}

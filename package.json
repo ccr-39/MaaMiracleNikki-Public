@@ -1,0 +1,16 @@
+{
+  "name": "maamiraclenikki",
+  "description": "基于 MaaFramework 的《奇迹暖暖》日常自动化工具。",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccr-39/MaaMiracleNikki-Public.git"
+  },
+  "homepage": "https://github.com/ccr-39/MaaMiracleNikki-Public",
+  "bugs": "https://github.com/ccr-39/MaaMiracleNikki-Public/issues",
+  "private": true,
+  "devDependencies": {
+    "@nekosu/maa-tools": "1.0.23",
+    "@types/node": "^25.5.2",
+    "prettier-plugin-multiline-arrays": "^3.0.6"
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "QJNN_DreamweaverCommission": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_dreamweaver_commission",
+        "max_hit": 1,
+        "timeout": 180000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始执行织梦人学会日常：学会委托、浮梦岛并返回 HOME P3。",
+            "Node.Action.Succeeded": "织梦人学会两个子任务均已完成并确认返回 HOME P3。",
+            "Node.Action.Failed": "织梦人学会状态不明确、次数耗尽或校验失败，SafeStop。"
+        }
+    },
+    "QJNN_DreamweaverCommissionReadOnlyDebug": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_dreamweaver_commission_read_only",
+        "max_hit": 1,
+        "timeout": 60000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "只读导航至学会委托并扫描三栏OCR。",
+            "Node.Action.Succeeded": "只读三栏OCR扫描完成；未执行委托操作。",
+            "Node.Action.Failed": "只读模式页面无法确认，SafeStop。"
+        }
+    }
+}

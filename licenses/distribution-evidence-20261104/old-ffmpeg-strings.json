@@ -1,0 +1,58 @@
+[
+  {
+    "file": "opencv_videoio_ffmpeg4140_64.dll",
+    "strings": [
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf57.%d.%d",
+      "Lavf61.7.100",
+      "VN:Lavf61.7.100,",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "--target=x86_64-win64-gcc --disable-examples --disable-unit-tests --disable-install-bins --disable-docs --disable-shared --enable-static --enable-vp8 --enable-vp9 --disable-multithread --prefix=/build/libvpx_x64/install",
+      "Rate distribution information input.It requires --enable-rate-guide-deltaq=1.",
+      "Delta qindex mode (0: off, 1: deltaq objective (default), 2: deltaq placeholder, 3: key frame visual quality, 4: user rating based visual quality optimization, 5: HDR video, 6: Variance Boost); --deltaq-mode=1 requires --enable-tpl-model=1",
+      "--enable-cross-compile --arch=x86_64 --target-os=mingw32 --cross-prefix=x86_64-w64-mingw32- --pkg-config=pkg-config --enable-static --enable-w32threads --enable-libopenh264 --enable-libvpx --disable-filters --disable-bsfs --disable-programs --disable-debug --disable-cuda --disable-cuvid --disable-nvenc --enable-libaom --prefix=/build/ffmpeg_x86_64/install",
+      " is not implemented. Update your FFmpeg version to the newest one from Git. If the problem still occurs, it means that your file has a feature which has not been implemented."
+    ]
+  },
+  {
+    "file": "opencv_videoio_ffmpeg500_64.dll",
+    "strings": [
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf57.%d.%d",
+      "Lavf61.7.100",
+      "VN:Lavf61.7.100,",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavf61.7.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "Lavc61.19.100",
+      "--target=x86_64-win64-gcc --disable-examples --disable-unit-tests --disable-install-bins --disable-docs --disable-shared --enable-static --enable-vp8 --enable-vp9 --disable-multithread --prefix=/build/libvpx_x64/install",
+      "Rate distribution information input.It requires --enable-rate-guide-deltaq=1.",
+      "Delta qindex mode (0: off, 1: deltaq objective (default), 2: deltaq placeholder, 3: key frame visual quality, 4: user rating based visual quality optimization, 5: HDR video, 6: Variance Boost); --deltaq-mode=1 requires --enable-tpl-model=1",
+      "--enable-cross-compile --arch=x86_64 --target-os=mingw32 --cross-prefix=x86_64-w64-mingw32- --pkg-config=pkg-config --enable-static --enable-w32threads --enable-libopenh264 --enable-libvpx --disable-filters --disable-bsfs --disable-programs --disable-debug --disable-cuda --disable-cuvid --disable-nvenc --enable-libaom --prefix=/build/ffmpeg_x86_64/install",
+      " is not implemented. Update your FFmpeg version to the newest one from Git. If the problem still occurs, it means that your file has a feature which has not been implemented."
+    ]
+  }
+]

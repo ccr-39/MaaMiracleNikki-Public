@@ -1,0 +1,212 @@
+{
+  "no_controller_created": true,
+  "no_adb": true,
+  "sample_kind": "programmatically drawn text; no game screenshots",
+  "all_same": true,
+  "cases": [
+    {
+      "text": "QQ登录  微信登录",
+      "font_points": 24,
+      "local": [
+        {
+          "text": "QQ登录 微信登录",
+          "score": 0.970409
+        }
+      ],
+      "official": [
+        {
+          "text": "QQ登录 微信登录",
+          "score": 0.970409
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "设置  修复  清除",
+      "font_points": 24,
+      "local": [
+        {
+          "text": "设置修复 清除",
+          "score": 0.942116
+        }
+      ],
+      "official": [
+        {
+          "text": "设置修复 清除",
+          "score": 0.942116
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "点击开始  进入游戏",
+      "font_points": 24,
+      "local": [
+        {
+          "text": "点击开始 进入游戏",
+          "score": 0.980589
+        }
+      ],
+      "official": [
+        {
+          "text": "点击开始 进入游戏",
+          "score": 0.980589
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "签到  点击领取  每日任务",
+      "font_points": 24,
+      "local": [
+        {
+          "text": "签到 点击领取 每日任务",
+          "score": 0.982838
+        }
+      ],
+      "official": [
+        {
+          "text": "签到 点击领取 每日任务",
+          "score": 0.982838
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "QQ登录  微信登录",
+      "font_points": 36,
+      "local": [
+        {
+          "text": "QQ登录 微信登录",
+          "score": 0.960894
+        }
+      ],
+      "official": [
+        {
+          "text": "QQ登录 微信登录",
+          "score": 0.960894
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "设置  修复  清除",
+      "font_points": 36,
+      "local": [
+        {
+          "text": "设置修复 清除",
+          "score": 0.935498
+        }
+      ],
+      "official": [
+        {
+          "text": "设置修复 清除",
+          "score": 0.935498
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "点击开始  进入游戏",
+      "font_points": 36,
+      "local": [
+        {
+          "text": "点击开始 进入游戏",
+          "score": 0.964694
+        }
+      ],
+      "official": [
+        {
+          "text": "点击开始 进入游戏",
+          "score": 0.964694
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "签到  点击领取  每日任务",
+      "font_points": 36,
+      "local": [
+        {
+          "text": "签到 点击领取 每日任务",
+          "score": 0.954738
+        }
+      ],
+      "official": [
+        {
+          "text": "签到 点击领取 每日任务",
+          "score": 0.954738
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "QQ登录  微信登录",
+      "font_points": 48,
+      "local": [
+        {
+          "text": "QQ登录 微信登录",
+          "score": 0.963352
+        }
+      ],
+      "official": [
+        {
+          "text": "QQ登录 微信登录",
+          "score": 0.963352
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "设置  修复  清除",
+      "font_points": 48,
+      "local": [
+        {
+          "text": "设置修复清除",
+          "score": 0.999889
+        }
+      ],
+      "official": [
+        {
+          "text": "设置修复清除",
+          "score": 0.999889
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "点击开始  进入游戏",
+      "font_points": 48,
+      "local": [
+        {
+          "text": "点击开始 进入游戏",
+          "score": 0.952135
+        }
+      ],
+      "official": [
+        {
+          "text": "点击开始 进入游戏",
+          "score": 0.952135
+        }
+      ],
+      "same_text": true
+    },
+    {
+      "text": "签到  点击领取  每日任务",
+      "font_points": 48,
+      "local": [
+        {
+          "text": "签到 点击领取 每日任务",
+          "score": 0.943136
+        }
+      ],
+      "official": [
+        {
+          "text": "签到 点击领取 每日任务",
+          "score": 0.943136
+        }
+      ],
+      "same_text": true
+    }
+  ]
+}

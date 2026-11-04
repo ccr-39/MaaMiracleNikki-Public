@@ -1,0 +1,24 @@
+{
+    "QJNN_StartAndSignin": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "QJNN_SigninRewardPopup",
+            "QJNN_SigninScreenAfterClaim",
+            "QJNN_SigninScreen",
+            "QJNN_RewardSuitShowcase",
+            "QJNN_RewardClothesScreen",
+            {
+                "name": "QJNN_StartAndEnterHome",
+                "jump_back": true
+            },
+            "QJNN_Signin"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始执行：启动游戏 → 进入首页 → 每日签到。"
+        }
+    }
+}

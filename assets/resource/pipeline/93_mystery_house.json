@@ -1,0 +1,17 @@
+{
+    "QJNN_MysteryHouseDaily": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_mystery_house_daily",
+        "max_hit": 1,
+        "timeout": 240000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[MysteryHouse] starting daily task",
+            "Node.Action.Succeeded": "[MysteryHouse] completed",
+            "Node.Action.Failed": "[MysteryHouse] SafeStop; see OCR and diagnostic screenshot logs"
+        }
+    }
+}

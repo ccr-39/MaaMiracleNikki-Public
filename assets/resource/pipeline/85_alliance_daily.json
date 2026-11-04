@@ -1,0 +1,53 @@
+{
+    "QJNN_AllianceAfterCommissionDebug": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            {
+                "name": "QJNN_AllianceCommissionMapExit",
+                "jump_back": true
+            },
+            {
+                "name": "QJNN_Library",
+                "jump_back": true
+            },
+            "QJNN_AllianceDailyExit"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[AllianceAfterCommissionDebug] Starting from current commission map"
+        }
+    },
+    "QJNN_AllianceDaily": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_alliance_daily",
+        "max_hit": 1,
+        "timeout": 240000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "识别当前 HOME/联盟主页/委托页/图书馆状态并安全续跑联盟日常。",
+            "Node.Action.Succeeded": "联盟日常已从当前合法状态续跑完成并返回 HOME P3。",
+            "Node.Action.Failed": "当前状态不可安全恢复或子流程失败，已停止且未重置到 HOME。"
+        }
+    },
+    "QJNN_AllianceDailyExit": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_alliance_daily_exit",
+        "max_hit": 1,
+        "timeout": 20000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "子任务完成，统一退出搭配师联盟。",
+            "Node.Action.Succeeded": "联盟日常完成并已确认返回主页 P3。",
+            "Node.Action.Failed": "联盟退出失败，安全停止。"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "path": "source/MaaUtils",
+    "sha": "6e9ba33f6ad835418097d9324c01c44a82825a2b",
+    "submodule_git_url": "https://github.com/MaaXYZ/MaaUtils.git",
+    "html_url": "https://github.com/MaaXYZ/MaaUtils/tree/6e9ba33f6ad835418097d9324c01c44a82825a2b"
+  },
+  {
+    "path": "3rdparty/MaaAgentBinary",
+    "sha": "173d43c4b5518064b27720b0cf08c781f291eba9",
+    "submodule_git_url": "https://github.com/MaaXYZ/MaaAgentBinary",
+    "html_url": "https://github.com/MaaXYZ/MaaAgentBinary/tree/173d43c4b5518064b27720b0cf08c781f291eba9"
+  },
+  {
+    "path": "3rdparty/EmulatorExtras",
+    "sha": "54d3a3ad448f0541df3759ae91b571a6762daaf1",
+    "submodule_git_url": "https://github.com/MaaXYZ/EmulatorExtras.git",
+    "html_url": "https://github.com/MaaXYZ/EmulatorExtras/tree/54d3a3ad448f0541df3759ae91b571a6762daaf1"
+  }
+]

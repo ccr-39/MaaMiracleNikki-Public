@@ -1,0 +1,15 @@
+{
+    "QJNN_StaminaDaily": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_stamina_daily",
+        "max_hit": 1,
+        "timeout": 600000,
+        "on_error": ["QJNN_SafeStop"],
+        "focus": {
+            "Node.Action.Starting": "体力任务：主题第2项，按设定件数从发型到妆容依次处理。",
+            "Node.Action.Succeeded": "服装处理结束，并确认返回HOME。",
+            "Node.Action.Failed": "体力任务状态未确认，保存诊断并SafeStop。"
+        }
+    }
+}

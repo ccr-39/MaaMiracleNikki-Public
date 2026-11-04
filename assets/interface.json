@@ -1,0 +1,243 @@
+{
+    "interface_version": 2,
+    "name": "MaaMiracleNikki",
+    "description": "基于 MaaFramework 的《奇迹暖暖》日常自动化工具。",
+    "contact": "https://github.com/ccr-39/MaaMiracleNikki-Public",
+    "license": "MIT",
+    "welcome": [
+        "MMN - 奇迹暖暖小助手 · Miracle Nikki Assistant",
+        "基于 MaaFramework 的《奇迹暖暖》日常自动化工具。",
+        "首次运行请先执行“连接与截图测试”；实验任务不会处理付费弹窗。"
+    ],
+    "version": "0.1.2-rc.1",
+    "controller": [
+        {
+            "name": "Android",
+            "label": "安卓设备或模拟器",
+            "description": "通过 ADB 截图和模拟触摸，画面统一缩放为短边 720 像素。",
+            "type": "Adb",
+            "display_short_side": 720,
+            "display_raw": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "MainlandOfficial",
+            "label": "国服基础资源",
+            "description": "奇迹暖暖国服日常任务资源。",
+            "path": [
+                "./resource"
+            ],
+            "controller": [
+                "Android"
+            ]
+        }
+    ],
+    "task": [
+        {
+            "name": "每日任务领取",
+            "entry": "QJNN_DailyTaskClaim",
+            "allow_back_to_home_recovery": false,
+            "description": "最多4轮一键领取，按钮灰色后关闭面板并确认返回任意HOME。"
+        },
+        {
+            "name": "每日体力任务",
+            "entry": "QJNN_StaminaDaily",
+            "description": "衣柜自定义主题第2项，先发型不足用连衣裙补满4件；仅过关一次至0/3并返回HOME。支持中间页面恢复。"
+        },
+        {
+            "name": "连接与截图测试",
+            "entry": "QJNN_ConnectionTest",
+            "default_check": true,
+            "description": "只进行一次截图，不点击游戏。用于确认 ADB、分辨率和截图链路。"
+        },
+        {
+            "name": "启动游戏",
+            "entry": "QJNN_StartGame",
+            "allow_back_to_home_recovery": false,
+            "description": "只启动游戏进程，不进行登录和界面点击。",
+            "option": [
+                "游戏包名"
+            ]
+        },
+        {
+            "name": "启动并尝试进入主页（实验）",
+            "entry": "QJNN_StartAndEnterHome",
+            "allow_back_to_home_recovery": false,
+            "description": "启动游戏；已确认在游戏内页面时直接完成，保留当前页面供后续任务处理。登录页等待用户手动登录。",
+            "option": [
+                "游戏包名"
+            ]
+        },
+        {
+            "name": "每日签到",
+            "entry": "QJNN_Signin",
+            "description": "默认只处理当天免费签到；齿轮设置可开启补签并选择免费、50钻、100钻档位，包含较低费用。"
+        },
+        {
+            "name": "签到奖励流调试",
+            "entry": "QJNN_SigninRewardDebug",
+            "description": "从当前页面开始测试签到奖励清理流程。"
+        },
+        {
+            "name": "系统邮件领取",
+            "entry": "QJNN_Mail",
+            "description": "默认只领取系统邮件；齿轮设置可开启系统邮件完成后领取好友邮件，不处理公告或删除。"
+        },
+        {
+            "name": "好友一键送心",
+            "entry": "QJNN_FriendSendHeart",
+            "description": "从 HOME P1/P2/P3 任意一页或好友页执行一次一键送心，确认点击后新增提示并返回任意 HOME 页。"
+        },
+        {
+            "name": "谜之屋每日任务",
+            "entry": "QJNN_MysteryHouseDaily",
+            "description": "从 HOME P1 进入谜之屋；仅领取幻之阁免费机会，并按当日安全 checkpoint 完成谜之阁两次免费与两次 3000 金币买一个。"
+        },
+        {
+            "name": "好友 HOME 识别调试",
+            "entry": "QJNN_FriendHomeAnyPageDebug",
+            "description": "只识别当前是否为带好友入口的 HOME P1/P2/P3，不点击任何 UI。"
+        },
+        {
+            "name": "好友页返回调试",
+            "entry": "QJNN_FriendBackDebug",
+            "description": "仅从已确认的好友页单击一次左上粉色圆形返回箭头，并验证返回任意 HOME；不执行送心。"
+        },
+        {
+            "name": "启动并签到",
+            "entry": "QJNN_StartAndSignin",
+            "description": "从点击开始页进入游戏；登录页等待用户手动完成登录，到达首页后执行当天免费签到。",
+            "option": [
+                "游戏包名"
+            ]
+        },
+        {
+            "name": "主页导航到 P3",
+            "entry": "QJNN_HomeToP3",
+            "description": "从当前主页 P1、P2 或 P3 导航并确认到达 P3；不会进入任何主页功能。"
+        },
+        {
+            "name": "小屋生活点滴·8小时任务",
+            "entry": "QJNN_HomeLifeBits",
+            "description": "从 HOME P1/P2/P3、小屋主页、待领取、奖励、选择、8小时确认或进行中页恢复；选择第二项 8小时/20张心意券任务，不取消、覆盖或快进已有任务。"
+        },
+        {
+            "name": "小屋外出拜访·随机5次",
+            "entry": "QJNN_HomeRandomVisit",
+            "description": "每次启动从 0 开始，仅在 Loading 完成并稳定确认随机小屋后累计有效拜访；确认 5 次后返回自己的小屋主页并安全退出至 HOME。"
+        },
+        {
+            "name": "小屋完整日常",
+            "entry": "QJNN_HomeDaily",
+            "description": "从任意 HOME 页只进入一次小屋，依次完成生活点滴和随机拜访 5 次，最后只退出一次并统一导航到 HOME P2。"
+        },
+        {
+            "name": "织梦人学会日常",
+            "entry": "QJNN_DreamweaverCommission",
+            "description": "从 HOME P1/P2/P3 进入织梦人学会，依次完成学会委托与浮梦岛免费探索，最后确认返回 HOME P3；保留原任务入口兼容调用。"
+        },
+        {
+            "name": "织梦人学会委托只读实机测试",
+            "entry": "QJNN_DreamweaverCommissionReadOnlyDebug",
+            "description": "仅从 HOME 导航至学会委托、输出三栏OCR原文/坐标/分类后结束；不执行提交、获取、购买、关卡或刷新。"
+        },
+        {
+            "name": "搭配师联盟委托",
+            "entry": "QJNN_AllianceCommission",
+            "description": "从主页 P3 进入搭配师联盟，完成剩余委托次数并返回联盟首页。"
+        },
+        {
+            "name": "联盟委托结算调试",
+            "entry": "QJNN_AllianceCommissionSettlementDebug",
+            "description": "从当前页面开始等待并安全清理联盟委托结算层，不重新进入联盟或点击完成次数。"
+        },
+        {
+            "name": "联盟委托后半段续跑调试",
+            "entry": "QJNN_AllianceAfterCommissionDebug",
+            "description": "从明确的 0/5 委托地图安全返回联盟首页，复用图书馆与联盟统一退出流程。"
+        },
+        {
+            "name": "搭配师联盟图书馆",
+            "entry": "QJNN_Library",
+            "description": "从联盟首页或图书馆检查免费整理资料机会，完成后返回联盟首页。"
+        },
+        {
+            "name": "搭配师联盟日常",
+            "entry": "QJNN_AllianceDaily",
+            "description": "从主页 P3 依次执行联盟委托、图书馆，最后统一退出联盟并返回主页 P3。"
+        },
+        {
+            "name": "搭配竞技场日常",
+            "entry": "QJNN_ArenaDaily",
+            "description": "从主页 P3 进入搭配竞技场，安全使用快速完成消耗免费次数并返回主页。"
+        },
+        {
+            "name": "竞技场退出调试",
+            "entry": "QJNN_ArenaExitDebug",
+            "description": "仅从当前竞技场 0/5 首页复用正式退出逻辑并返回主页 P3。"
+        },
+        {
+            "name": "搭配评选赛日常",
+            "entry": "QJNN_CompetitionDaily",
+            "description": "从主页 P3 进入搭配评选赛，安全完成剩余评委投票并返回主页。周二、周六 02:00–10:00 暂停参赛和点赞，10 点后开启点赞（北京时间）。"
+        },
+        {
+            "name": "搭配评选赛退出调试",
+            "entry": "QJNN_CompetitionExitDebug",
+            "description": "仅从当前明确 JudgePage 复用正式两级退出流程并返回主页 P3，不执行点赞。"
+        },
+        {
+            "name": "服装店购买3件",
+            "entry": "QJNN_ClothesShopPurchase",
+            "description": "从 HOME P1/P2/P3 进入衣柜，选择搭配购物节服装并在服装店购买 3 件；购买确认只提交一次，最终返回 HOME P2。"
+        },
+        {
+            "name": "分解重构",
+            "entry": "QJNN_DecomposeDaily",
+            "description": "从 HOME P1/P2/P3 稳定切到 P1，快速选中无用途衣服并在精确确认稀有服装提示后分解；按实际奖励页数量清理并返回正常 HOME。"
+        },
+        {
+            "name": "公共安全弹窗调试",
+            "entry": "QJNN_CommonPopupDebug",
+            "description": "仅从当前屏幕采集并验证公共白名单弹窗；未知页面零点击安全停止。"
+        },
+        {
+            "name": "世界巡游",
+            "entry": "QJNN_WorldTour",
+            "description": "从 HOME P1 或世界巡游中断页恢复，仅随便逛逛免费景点，确认游览中后返回 HOME P1。"
+        }
+    ],
+    "option": {
+        "游戏包名": {
+            "type": "input",
+            "label": "Android 游戏包名",
+            "description": "国服官服通常为 com.tencent.tmgp.qjnn；渠道服请用 adb shell pm list packages 实测。",
+            "inputs": [
+                {
+                    "name": "package_name",
+                    "label": "包名",
+                    "default": "com.tencent.tmgp.qjnn",
+                    "pipeline_type": "string",
+                    "verify": "^[A-Za-z0-9_]+(\\.[A-Za-z0-9_]+)+$"
+                }
+            ],
+            "pipeline_override": {
+                "QJNN_StartApp": {
+                    "package": "{package_name}"
+                },
+                "QJNN_StartAppAndEnterHome": {
+                    "package": "{package_name}"
+                },
+                "QJNN_QjnnForeground": {
+                    "custom_recognition_param": {
+                        "package": "{package_name}"
+                    }
+                },
+                "QJNN_StopApp": {
+                    "package": "{package_name}"
+                }
+            }
+        }
+    }
+}

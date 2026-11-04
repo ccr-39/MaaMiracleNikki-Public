@@ -1,0 +1,82 @@
+[
+  {
+    "file": "paddle-v6-models.md",
+    "url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/docs/version3.x/algorithm/PP-OCRv6/PP-OCRv6.md",
+    "sha256": "cfea9b50660568d6a0d2714e565ed16756258b003f02571d3663e0ff4aabbea3"
+  },
+  {
+    "file": "maa-assets-pr.json",
+    "url": "https://api.github.com/repos/MaaXYZ/MaaCommonAssets/pulls/6",
+    "sha256": "75c520fb3f3e9aab140e16865ac5cf12bc538be4f699f5466c8de87b1b257eff"
+  },
+  {
+    "file": "maa-assets-initial-commit.json",
+    "url": "https://api.github.com/repos/MaaXYZ/MaaCommonAssets/commits/232724783340245a93e304c4209a4d0f34e78c2f",
+    "sha256": "19d227564eda486ce36a47811d80715f327ca5a6800536a54e2354de4f9901e5"
+  },
+  {
+    "file": "zeromq-port.cmake",
+    "url": "https://raw.githubusercontent.com/MaaXYZ/MaaDeps/v2.12.6/vcpkg-overlay/ports/zeromq/portfile.cmake",
+    "sha256": "3dbb54d9a0773b740f8ddde5a73e99ed29adcc2ed51bfa7182a47b8f892bcb70"
+  },
+  {
+    "file": "ffmpeg4-readme.txt",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/bd9418020a5c342be979c56d6e6434261959d3af/readme.txt",
+    "sha256": "26e4734e7ac1e72adac7a06a747ac9a997ee3714bc2ed8b745ff27dee35a2ad9"
+  },
+  {
+    "file": "ffmpeg4-license.txt",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/bd9418020a5c342be979c56d6e6434261959d3af/license.txt",
+    "sha256": "1f9d4168b4a9a2bdd1851023735a41d0ab09ffa5fcc1a721a99ebc1d7d35a9c5"
+  },
+  {
+    "file": "ffmpeg4-ffmpeg-download_src.sh",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/bd9418020a5c342be979c56d6e6434261959d3af/ffmpeg/download_src.sh",
+    "sha256": "f1edcbbb1ac3e621a5854f2c5fa13c2124988df8e9442ecae0f7af164a822b01"
+  },
+  {
+    "file": "ffmpeg4-ffmpeg-make_mingw.sh",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/bd9418020a5c342be979c56d6e6434261959d3af/ffmpeg/make_mingw.sh",
+    "sha256": "ec344c47ba8d6bc72f7147b171b9b347b4e8352224cc0852eac6ef4a6d8de6d8"
+  },
+  {
+    "file": "ffmpeg4-ffmpeg-ffmpeg_version.cmake",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/bd9418020a5c342be979c56d6e6434261959d3af/ffmpeg/ffmpeg_version.cmake",
+    "sha256": "8e8cfc1f90cf947458cc4c4f4d4ee538667feae3807f6966d81aa6d02bac8fae"
+  },
+  {
+    "file": "ffmpeg4-ffmpeg-archive_src.sh",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/bd9418020a5c342be979c56d6e6434261959d3af/ffmpeg/archive_src.sh",
+    "sha256": "20c5a48f3447d1a8de5449fdff1f05dda6a6118f3022faa6ad14b4456790cfb6"
+  },
+  {
+    "file": "ffmpeg5-readme.txt",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/06dc20cad65dc7fcf784f70c95d46750520889a7/readme.txt",
+    "sha256": "26e4734e7ac1e72adac7a06a747ac9a997ee3714bc2ed8b745ff27dee35a2ad9"
+  },
+  {
+    "file": "ffmpeg5-license.txt",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/06dc20cad65dc7fcf784f70c95d46750520889a7/license.txt",
+    "sha256": "1f9d4168b4a9a2bdd1851023735a41d0ab09ffa5fcc1a721a99ebc1d7d35a9c5"
+  },
+  {
+    "file": "ffmpeg5-ffmpeg-download_src.sh",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/06dc20cad65dc7fcf784f70c95d46750520889a7/ffmpeg/download_src.sh",
+    "sha256": "f1edcbbb1ac3e621a5854f2c5fa13c2124988df8e9442ecae0f7af164a822b01"
+  },
+  {
+    "file": "ffmpeg5-ffmpeg-make_mingw.sh",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/06dc20cad65dc7fcf784f70c95d46750520889a7/ffmpeg/make_mingw.sh",
+    "sha256": "ec344c47ba8d6bc72f7147b171b9b347b4e8352224cc0852eac6ef4a6d8de6d8"
+  },
+  {
+    "file": "ffmpeg5-ffmpeg-ffmpeg_version.cmake",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/06dc20cad65dc7fcf784f70c95d46750520889a7/ffmpeg/ffmpeg_version.cmake",
+    "sha256": "8e8cfc1f90cf947458cc4c4f4d4ee538667feae3807f6966d81aa6d02bac8fae"
+  },
+  {
+    "file": "ffmpeg5-ffmpeg-archive_src.sh",
+    "url": "https://raw.githubusercontent.com/opencv/opencv_3rdparty/06dc20cad65dc7fcf784f70c95d46750520889a7/ffmpeg/archive_src.sh",
+    "sha256": "20c5a48f3447d1a8de5449fdff1f05dda6a6118f3022faa6ad14b4456790cfb6"
+  }
+]

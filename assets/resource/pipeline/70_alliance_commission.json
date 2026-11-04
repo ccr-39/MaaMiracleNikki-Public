@@ -1,0 +1,47 @@
+{
+    "QJNN_AllianceCommissionMapExit": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_alliance_commission_map_exit",
+        "max_hit": 1,
+        "timeout": 20000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认当前为 0/5 委托地图后安全返回联盟首页。",
+            "Node.Action.Succeeded": "已从 0/5 委托地图返回联盟首页。",
+            "Node.Action.Failed": "当前不是明确的 0/5 委托地图，未点击并安全停止。"
+        }
+    },
+    "QJNN_AllianceCommissionSettlementDebug": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_alliance_commission_settlement_debug",
+        "max_hit": 1,
+        "timeout": 70000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[AllianceCommissionSettlementDebug] Starting from current screen",
+            "Node.Action.Succeeded": "联盟委托结算层已安全清理并确认返回委托地图。",
+            "Node.Action.Failed": "联盟委托结算调试失败，未点击未知页面并安全停止。"
+        }
+    },
+    "QJNN_AllianceCommission": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_alliance_commission",
+        "max_hit": 1,
+        "timeout": 120000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "从主页 P3 开始执行搭配师联盟委托任务。",
+            "Node.Action.Succeeded": "联盟委托已完成并确认返回联盟首页。",
+            "Node.Action.Failed": "联盟委托失败，未继续盲点并安全停止。"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "QJNN_MakeupOnce": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_signin_makeup_once",
+        "custom_action_param": {"enabled": false},
+        "timeout": 360000,
+        "on_error": ["QJNN_SafeStop"],
+        "focus": {
+            "Node.Action.Starting": "普通签到分支已结束，按所选费用档位处理补签。"
+        }
+    }
+}

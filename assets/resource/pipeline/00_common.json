@@ -1,0 +1,35 @@
+{
+    "QJNN_ConnectionTest": {
+        "action": "Screencap",
+        "focus": {
+            "Node.Action.Succeeded": "截图成功：控制器与设备已连通。"
+        }
+    },
+    "QJNN_StartApp": {
+        "action": "StartApp",
+        "package": "com.tencent.tmgp.qjnn",
+        "post_delay": 5000
+    },
+    "QJNN_StopApp": {
+        "action": "StopTask"
+    },
+    "QJNN_Back": {
+        "action": "StopTask"
+    },
+    "QJNN_SwipeUp": {
+        "action": "Swipe",
+        "begin": [640, 560],
+        "end": [640, 180],
+        "duration": 450
+    },
+    "QJNN_SwipeDown": {
+        "action": "Swipe",
+        "begin": [640, 180],
+        "end": [640, 560],
+        "duration": 450
+    },
+    "QJNN_SafeStop": {
+        "action": "StopTask"
+    }
+}
+

@@ -1,0 +1,61 @@
+name: Windows build and release
+
+on:
+  # Releases of the tested fixed EXE are prepared and uploaded separately.
+  # Tags must never rebuild or replace the user's tested program.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mmn-windows-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    runs-on: windows-2025
+    timeout-minutes: 45
+    env:
+      PYTHONIOENCODING: utf-8
+      QT_QPA_PLATFORM: offscreen
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13.3'
+          architecture: x64
+      - name: Isolate runtime data
+        run: |
+          $DataDirectory = Join-Path $env:RUNNER_TEMP 'mmn-ci-data'
+          "MMN_DATA_DIR=$DataDirectory" | Out-File -LiteralPath $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Install pinned build and test dependencies
+        run: |
+          python -m pip install pip==25.1.1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip install -r packaging/ci-requirements.txt
+      - name: Prepare verified OCR assets
+        run: ./tools/setup_ocr.ps1
+      - name: Static checks
+        run: |
+          python tools/check_project.py --without-private-samples
+      - name: Complete offline regression
+        timeout-minutes: 20
+        run: python -m pytest tools -q -ra --without-private-samples
+      - name: Build and verify complete onedir
+        timeout-minutes: 15
+        run: ./tools/build_windows.ps1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: mmn-windows-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: dist/MaaMiracleNikki/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0

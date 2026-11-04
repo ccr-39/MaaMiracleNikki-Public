@@ -1,0 +1,60 @@
+{
+    "QJNN_CommonAchievementTitleOcr": {
+        "recognition": "OCR",
+        "expected": [
+            "新成就达成",
+            "学会新技能"
+        ],
+        "roi": [
+            90,
+            220,
+            540,
+            260
+        ],
+        "threshold": 0.7
+    },
+    "QJNN_CommonPopupRuntime": {
+        "recognition": "OCR",
+        "expected": [
+            "新成就达成",
+            "学会新技能"
+        ],
+        "roi": [
+            90,
+            220,
+            540,
+            260
+        ],
+        "threshold": 0.7,
+        "action": "Custom",
+        "custom_action": "qjnn_common_popup_runtime",
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_CommonPopupPreflight": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_common_popup_preflight",
+        "max_hit": 1,
+        "timeout": 30000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_CommonPopupDebug": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_common_popup_debug",
+        "max_hit": 1,
+        "timeout": 30000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[CommonPopupDebug] Starting from current screen",
+            "Node.Action.Succeeded": "公共白名单弹窗已安全关闭并重新确认消失。",
+            "Node.Action.Failed": "当前不是公共白名单弹窗、弹窗未知或单次安全关闭后仍存在；零额外点击停止。"
+        }
+    }
+}

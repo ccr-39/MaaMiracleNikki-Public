@@ -1,0 +1,17 @@
+{
+    "QJNN_DecomposeDaily": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_decompose_daily",
+        "max_hit": 1,
+        "timeout": 180000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[Decompose] 从 HOME P1/P2/P3 开始执行分解重构。",
+            "Node.Action.Succeeded": "[Decompose] 奖励已按状态清理，并确认返回正常 HOME。",
+            "Node.Action.Failed": "[Decompose] 状态不明确、超时或安全校验失败，SafeStop。"
+        }
+    }
+}

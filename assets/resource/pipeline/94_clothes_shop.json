@@ -1,0 +1,36 @@
+{
+    "QJNN_ClothesShopPurchase": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "QJNN_ClothesShopBusinessState",
+            {
+                "name": "QJNN_StartAndEnterHome",
+                "jump_back": true
+            },
+            "QJNN_ClothesShopBusinessState"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[ClothesShop] 先识别可恢复业务页；否则复用公共启动链。"
+        }
+    },
+    "QJNN_ClothesShopBusinessState": {
+        "recognition": "Custom",
+        "custom_recognition": "qjnn_clothes_shop_state",
+        "action": "Custom",
+        "custom_action": "qjnn_clothes_shop_purchase",
+        "max_hit": 1,
+        "timeout": 180000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[ClothesShop] 从当前已识别业务状态继续。",
+            "Node.Action.Succeeded": "[ClothesShop] 本次流程已结束并返回 HOME。",
+            "Node.Action.Failed": "[ClothesShop] 状态不明或校验失败，SafeStop；不会重复确认购买。"
+        }
+    }
+}

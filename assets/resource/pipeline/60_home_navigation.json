@@ -1,0 +1,59 @@
+{
+    "QJNN_HomeToP3": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_navigate",
+        "custom_action_param": {
+            "target_page": "P3"
+        },
+        "max_hit": 1,
+        "timeout": 45000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始识别当前主页并导航到 P3。",
+            "Node.Action.Succeeded": "主页已确认位于 P3。",
+            "Node.Action.Failed": "主页导航到 P3 失败，安全停止。"
+        }
+    },
+    "QJNN_HomeNavigateToP1": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_navigate",
+        "custom_action_param": {
+            "target_page": "P1"
+        },
+        "max_hit": 1,
+        "timeout": 45000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_HomeNavigateToP2": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_navigate",
+        "custom_action_param": {
+            "target_page": "P2"
+        },
+        "max_hit": 1,
+        "timeout": 45000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    },
+    "QJNN_HomeNavigateToP3": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_navigate",
+        "custom_action_param": {
+            "target_page": "P3"
+        },
+        "max_hit": 1,
+        "timeout": 45000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ]
+    }
+}

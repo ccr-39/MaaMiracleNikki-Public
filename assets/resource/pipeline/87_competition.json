@@ -1,0 +1,45 @@
+{
+    "QJNN_CompetitionDaily": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "QJNN_CompetitionRun"
+        ],
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "识别当前 HOME/CompetitionHome/JudgeReady 状态并安全续跑评选赛日常。"
+        }
+    },
+    "QJNN_CompetitionRun": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_competition_daily",
+        "max_hit": 1,
+        "timeout": 600000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "已确认主页 P3，开始识别并执行搭配评选赛。",
+            "Node.Action.Succeeded": "搭配评选赛已完成并确认返回主页 P3。",
+            "Node.Action.Failed": "搭配评选赛状态未知或安全检查失败，停止任务。"
+        }
+    },
+    "QJNN_CompetitionExitDebug": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_competition_exit_debug",
+        "max_hit": 1,
+        "timeout": 60000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "[CompetitionExitDebug] Starting from current JudgePage",
+            "Node.Action.Succeeded": "搭配评选赛两级退出已完成并确认回到主页 P3。",
+            "Node.Action.Failed": "当前不是明确 JudgePage 或返回验证失败；未执行盲点。"
+        }
+    }
+}

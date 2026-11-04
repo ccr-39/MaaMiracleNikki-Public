@@ -1,0 +1,202 @@
+[
+  {
+    "model": "det",
+    "local": {
+      "ir": 8,
+      "producer": "",
+      "opsets": [
+        [
+          "",
+          16
+        ]
+      ],
+      "nodes": 464,
+      "ops": {
+        "Conv": 83,
+        "Add": 111,
+        "Identity": 147,
+        "Relu": 20,
+        "MaxPool": 1,
+        "Concat": 2,
+        "ReduceMean": 5,
+        "HardSigmoid": 13,
+        "Mul": 39,
+        "Div": 13,
+        "Erf": 13,
+        "GlobalAveragePool": 8,
+        "Resize": 6,
+        "ConvTranspose": 2,
+        "Sigmoid": 1
+      },
+      "initializers": 213,
+      "inputs": [
+        "name: \"x\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.0\"\n      }\n      dim {\n        dim_value: 3\n      }\n      dim {\n        dim_param: \"DynamicDimension.1\"\n      }\n      dim {\n        dim_param: \"DynamicDimension.2\"\n      }\n    }\n  }\n}\n"
+      ],
+      "outputs": [
+        "name: \"fetch_name_0\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.3\"\n      }\n      dim {\n        dim_value: 1\n      }\n      dim {\n        dim_param: \"DynamicDimension.4\"\n      }\n      dim {\n        dim_param: \"DynamicDimension.5\"\n      }\n    }\n  }\n}\n"
+      ]
+    },
+    "official": {
+      "ir": 10,
+      "producer": "",
+      "opsets": [
+        [
+          "",
+          14
+        ]
+      ],
+      "nodes": 242,
+      "ops": {
+        "Conv": 83,
+        "Relu": 20,
+        "MaxPool": 1,
+        "Concat": 2,
+        "ReduceMean": 5,
+        "HardSigmoid": 13,
+        "Mul": 39,
+        "Div": 13,
+        "Erf": 13,
+        "Add": 36,
+        "GlobalAveragePool": 8,
+        "Resize": 6,
+        "ConvTranspose": 2,
+        "Sigmoid": 1
+      },
+      "initializers": 169,
+      "inputs": [
+        "name: \"x\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.0\"\n      }\n      dim {\n        dim_value: 3\n      }\n      dim {\n        dim_param: \"DynamicDimension.1\"\n      }\n      dim {\n        dim_param: \"DynamicDimension.2\"\n      }\n    }\n  }\n}\n"
+      ],
+      "outputs": [
+        "name: \"fetch_name_0\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"ConvTranspose_459_o0__d0\"\n      }\n      dim {\n        dim_value: 1\n      }\n      dim {\n        dim_param: \"ConvTranspose_459_o0__d2\"\n      }\n      dim {\n        dim_param: \"ConvTranspose_459_o0__d3\"\n      }\n    }\n  }\n}\n"
+      ]
+    },
+    "identical_initializer_multiset": false,
+    "local_only_tensors": {
+      "9c16095ed50248c0e1658be07f5bafe5dc11382843a99c6fb3a87c141808ceeb": 12,
+      "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c": 12,
+      "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57": 12,
+      "f2c77f67ad05118cb28fd45174b7939d107444af685aab63b614aa0ea617c8f2": 1,
+      "7e3c771d54399ceed5c015595ab54af0ba6d83e5eefd0e259927b40d5a6a4958": 1,
+      "3219e915ab9f6263b3d579e1597c255bf2f2cb1cfefd7dcd707c98a0b5ee11a6": 1,
+      "f71f76f3141e927993f0600e066856f240f95aa726ed4f8dc063f82975e1d7d5": 1,
+      "b18371138bed2998453ac225fda60e4268a174da48b825eedfa7319039a28c29": 1,
+      "d6e3facf8235dcdc3f28846e4d1a0bb9ae070d278ce189e995903e7de72837c7": 1,
+      "b7926fe198f239943d05ac7132486815d8664b0986c3225a1c7f954d93a84a1a": 1,
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": 5,
+      "aa5b3e0ef3e85eb14fa5e9eea359ae9b4f94dec784834d64c0b29ec5a8c83844": 3
+    },
+    "official_only_tensors": {
+      "8cf129c85ae109cc2721e047fb1d7b98758287628ea36127f55f47ec4b058267": 1,
+      "ec7a23a264a16657404e06885f38639c53d7bad6ca177456f21d3572a3766f55": 1,
+      "2f69c17e1092372feac73127c2c7e560c33a372388c804618dbc0efa8099bcc0": 1,
+      "b2f134a47419c66a023bb41b0bd7746932bccfa5fdfd4e037674edc4a2562211": 1,
+      "93b4cad7d49c505bd236e8d4f2b680ff8a14542a93920e6dfcc7fef7892472c8": 1,
+      "8941b5e8768fda4515d8f8605b8eed37a66c265f71601f16cc34087893a1ed09": 1,
+      "1cf7161aa6e4e0c0ee14286a4f8a84decf26fb139ff04b5f6305ef2a3ca312f9": 1
+    }
+  },
+  {
+    "model": "rec",
+    "local": {
+      "ir": 8,
+      "producer": "",
+      "opsets": [
+        [
+          "",
+          16
+        ]
+      ],
+      "nodes": 481,
+      "ops": {
+        "Conv": 57,
+        "Add": 103,
+        "Identity": 135,
+        "Relu": 10,
+        "MaxPool": 1,
+        "Concat": 3,
+        "ReduceMean": 15,
+        "HardSigmoid": 5,
+        "Mul": 43,
+        "Div": 18,
+        "Erf": 13,
+        "AveragePool": 1,
+        "BatchNormalization": 3,
+        "Sigmoid": 5,
+        "Shape": 4,
+        "Slice": 8,
+        "Squeeze": 8,
+        "Reshape": 8,
+        "Transpose": 9,
+        "Sub": 5,
+        "Pow": 5,
+        "Sqrt": 5,
+        "MatMul": 13,
+        "Softmax": 3,
+        "Unsqueeze": 1
+      },
+      "initializers": 250,
+      "inputs": [
+        "name: \"x\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.0\"\n      }\n      dim {\n        dim_value: 3\n      }\n      dim {\n        dim_value: 48\n      }\n      dim {\n        dim_param: \"DynamicDimension.1\"\n      }\n    }\n  }\n}\n"
+      ],
+      "outputs": [
+        "name: \"fetch_name_0\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.2\"\n      }\n      dim {\n        dim_param: \"DynamicDimension.3\"\n      }\n      dim {\n        dim_value: 18710\n      }\n    }\n  }\n}\n"
+      ]
+    },
+    "official": {
+      "ir": 6,
+      "producer": "",
+      "opsets": [
+        [
+          "",
+          11
+        ]
+      ],
+      "nodes": 481,
+      "ops": {
+        "Conv": 57,
+        "Add": 103,
+        "Identity": 135,
+        "Relu": 10,
+        "MaxPool": 1,
+        "Concat": 3,
+        "ReduceMean": 15,
+        "HardSigmoid": 5,
+        "Mul": 43,
+        "Div": 18,
+        "Erf": 13,
+        "AveragePool": 1,
+        "BatchNormalization": 3,
+        "Sigmoid": 5,
+        "Shape": 4,
+        "Slice": 8,
+        "Squeeze": 8,
+        "Reshape": 8,
+        "Transpose": 9,
+        "Sub": 5,
+        "Pow": 5,
+        "Sqrt": 5,
+        "MatMul": 13,
+        "Softmax": 3,
+        "Unsqueeze": 1
+      },
+      "initializers": 241,
+      "inputs": [
+        "name: \"x\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.0\"\n      }\n      dim {\n        dim_value: 3\n      }\n      dim {\n        dim_value: 48\n      }\n      dim {\n        dim_param: \"DynamicDimension.1\"\n      }\n    }\n  }\n}\n"
+      ],
+      "outputs": [
+        "name: \"fetch_name_0\"\ntype {\n  tensor_type {\n    elem_type: 1\n    shape {\n      dim {\n        dim_param: \"DynamicDimension.0\"\n      }\n      dim {\n        dim_param: \"Reshape_471_o0__d2\"\n      }\n      dim {\n        dim_value: 18710\n      }\n    }\n  }\n}\n"
+      ]
+    },
+    "identical_initializer_multiset": false,
+    "local_only_tensors": {
+      "708cd1a8b66145b5b39347700af4d84547fc47a773f822311d03c1acb13dc3f8": 1,
+      "ed5707b7cd87b2e25f7d045d74f3df6f5f81fe39879a356cb9d9e74662837b0f": 1,
+      "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc": 8,
+      "d86e8112f3c4c4442126f8e9f44f16867da487f29052bf91b810457db34209a4": 1
+    },
+    "official_only_tensors": {
+      "141b0980433ca71c152c5fce37c49bed902c524ab0aa500c5d5deabb19ff9987": 1,
+      "eaf6ff58077927e2b5c69504d98a4e87a80cc3f65b7358b3d24d4af031dbcf76": 1
+    }
+  }
+]

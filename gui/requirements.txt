@@ -1,0 +1,2 @@
+# PySide6 的 QtCore / QtGui / QtWidgets / QtTest；GUI 不依赖 WebEngine 等附加模块。
+PySide6-Essentials>=6.8,<7

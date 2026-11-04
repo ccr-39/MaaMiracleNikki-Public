@@ -1,0 +1,17 @@
+{
+    "QJNN_HomeRandomVisit": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_home_random_visit",
+        "max_hit": 1,
+        "timeout": 240000,
+        "on_error": [
+            "QJNN_SafeStop"
+        ],
+        "focus": {
+            "Node.Action.Starting": "识别当前 HOME/小屋/拜访页面；本次执行共确认 6 次有效随机拜访，恢复时保留进度，完成后仅处理返回。",
+            "Node.Action.Succeeded": "已确认 6 次有效随机拜访，回到自己的小屋主页后安全退出至 HOME。",
+            "Node.Action.Failed": "拜访状态、跳转、Loading、稳定页面或安全点击目标无法确认；已保存诊断并安全停止。"
+        }
+    }
+}

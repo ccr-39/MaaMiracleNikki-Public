@@ -1,0 +1,42 @@
+{
+  "qt": [
+    {
+      "component": "pyside-6.12.0.tar.xz",
+      "source": "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.12.0-src/pyside-setup-everywhere-src-6.12.0.tar.xz",
+      "archive_sha256": "099c1a597cf33c1b000e11cf68a0b82d216fb802bf81726efc720394f10c7751",
+      "license_files": 8
+    },
+    {
+      "component": "qtbase-6.12.0.tar.xz",
+      "source": "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtbase-everywhere-src-6.12.0.tar.xz",
+      "archive_sha256": "a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307",
+      "license_files": 159
+    },
+    {
+      "component": "qtsvg-6.12.0.tar.xz",
+      "source": "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtsvg-everywhere-src-6.12.0.tar.xz",
+      "archive_sha256": "e4ab39534ec97987b1b9b60ef7f4d3253d5912a69f8c713a01753174a4029331",
+      "license_files": 7
+    },
+    {
+      "component": "qtimageformats-6.12.0.tar.xz",
+      "source": "https://download.qt.io/official_releases/qt/6.12/6.12.0/submodules/qtimageformats-everywhere-src-6.12.0.tar.xz",
+      "archive_sha256": "0943132b5db8de6b6a7f1d162682173e8763c7ed94e80fd39113292845f67762",
+      "license_files": 11
+    }
+  ],
+  "maadeps_copyrights": 86,
+  "maadeps_matching_dlls": [
+    "DirectML.dll",
+    "ViGEmClient.dll",
+    "fastdeploy_ppocr_maa.dll",
+    "onnxruntime_maa.dll",
+    "opencv_world4_maa.dll"
+  ],
+  "maadeps": {
+    "tag": "v2.12.6",
+    "source": "https://github.com/MaaXYZ/MaaDeps/tree/v2.12.6",
+    "devel_archive": "https://github.com/MaaXYZ/MaaDeps/releases/download/v2.12.6/MaaDeps-x64-windows-devel.tar.xz",
+    "devel_sha256": "f67031e183735fad3faa6f9280f509d3ff1e25ae0e7e33a9185f275ef0f79cf7"
+  }
+}

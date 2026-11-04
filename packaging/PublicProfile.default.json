@@ -1,0 +1,33 @@
+{
+  "adb_address": "",
+  "auto_connect": false,
+  "remember_selection": true,
+  "log_level": "INFO",
+  "selected_entries": [],
+  "dry_run": false,
+  "adb_path": "",
+  "connection_profile": "General",
+  "continue_on_failure": false,
+  "competition_votes": 20,
+  "competition_enter": false,
+  "reward_enabled": false,
+  "reward_mail": false,
+  "reward_daily": false,
+  "mail_claim_friends": false,
+  "alliance_library_three": false,
+  "signin_makeup_once": false,
+  "signin_limited_event": false,
+  "signin_makeup_tiers": [
+    50
+  ],
+  "mystery_allow_coin_draws": false,
+  "mystery_max_coin_draws": 2,
+  "stamina_max_items": 4,
+  "schedule_enabled": false,
+  "schedule_times": "08:00",
+  "close_emulator_after_completion": false,
+  "emulator_auto_start": false,
+  "emulator_path": "",
+  "emulator_arguments": "",
+  "auto_check_updates": true
+}

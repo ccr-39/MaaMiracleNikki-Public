@@ -1,0 +1,67 @@
+{
+    "QJNN_FriendMailResume": {
+        "recognition": "And",
+        "all_of": ["QJNN_FriendMailReady"],
+        "action": "Custom",
+        "custom_action": "qjnn_friend_mail",
+        "timeout": 120000,
+        "on_error": ["QJNN_MailFailure"]
+    },
+    "QJNN_MailEitherTabReady": {
+        "recognition": "Or",
+        "any_of": ["QJNN_MailRewardSystemReady", "QJNN_FriendMailReady"]
+    },
+    "QJNN_FriendMail": {
+        "recognition": "DirectHit",
+        "action": "Custom",
+        "custom_action": "qjnn_friend_mail",
+        "max_hit": 1,
+        "timeout": 120000,
+        "on_error": [
+            "QJNN_MailFailure"
+        ]
+    },
+    "QJNN_FriendMailTab": {
+        "recognition": "OCR",
+        "expected": [
+            "好友邮件"
+        ],
+        "threshold": 0.85
+    },
+    "QJNN_FriendMailSelected": {
+        "recognition": "ColorMatch",
+        "roi": "QJNN_FriendMailTab",
+        "roi_offset": [
+            -5,
+            -8,
+            10,
+            -15
+        ],
+        "lower": [
+            [
+                250,
+                175,
+                135
+            ]
+        ],
+        "upper": [
+            [
+                255,
+                220,
+                205
+            ]
+        ],
+        "method": 4,
+        "count": 100,
+        "connected": true
+    },
+    "QJNN_FriendMailReady": {
+        "recognition": "And",
+        "all_of": [
+            "QJNN_MailPageTitle",
+            "QJNN_FriendMailTab",
+            "QJNN_FriendMailSelected"
+        ],
+        "action": "DoNothing"
+    }
+}
