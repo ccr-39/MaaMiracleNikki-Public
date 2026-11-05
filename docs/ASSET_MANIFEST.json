@@ -20,7 +20,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/alliance/top_back_arrow.png",
@@ -49,7 +49,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/arena/back_button.png",
@@ -81,7 +81,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/common/chapter_back_arrow.png",
@@ -104,7 +104,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/competition/home_back_button.png",
@@ -127,7 +127,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/competition/judge_back_button.png",
@@ -150,7 +150,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/competition/like_thumb.png",
@@ -167,7 +167,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/daily/makeup_diamond.png",
@@ -184,7 +184,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/daily/signin_claim.png",
@@ -202,7 +202,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/daily/signin_entry.png",
@@ -225,7 +225,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/daily/signin_page_marker.png",
@@ -243,7 +243,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/decompose/workshop_back_arrow.png",
@@ -260,7 +260,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/dreamweaver/missing_clothes_plus.png",
@@ -277,7 +277,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/dreamweaver/purchase_plus_one.png",
@@ -294,7 +294,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/home_pages/current_theme/left_arrow.png",
@@ -311,7 +311,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/home_pages/current_theme/right_arrow.png",
@@ -328,7 +328,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/home_random_visit/loading_snowflake_01.png",
@@ -343,7 +343,7 @@
         "dynamic": "loading_snowflake_{index:02d}.png, index=1..3"
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/home_random_visit/loading_snowflake_02.png",
@@ -358,7 +358,7 @@
         "dynamic": "loading_snowflake_{index:02d}.png, index=1..3"
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/home_random_visit/loading_snowflake_03.png",
@@ -373,7 +373,7 @@
         "dynamic": "loading_snowflake_{index:02d}.png, index=1..3"
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/start/enter_game_button.png",
@@ -397,7 +397,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/start/start_button.png",
@@ -433,7 +433,7 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   },
   {
     "path": "assets/resource/image/world_tour/event_collected_stamp.png",
@@ -450,6 +450,6 @@
         ]
       }
     ],
-    "redistribution": "unconfirmed; retained in local-only complete source; public upload prohibited"
+    "redistribution": "unconfirmed redistribution authorization; retained in public test source and Windows package; not covered by project MIT license"
   }
 ]
