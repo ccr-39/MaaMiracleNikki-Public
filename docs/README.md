@@ -27,4 +27,4 @@
 - [对应源码和库替换](SOURCE_ACCESS_AND_RELINKING.md)
 - [已有分发整改](DISTRIBUTION_REMEDIATION_20261104.md)
 
-旧开发测试、截图、阶段性审计和固定旧版发行脚本保存在旧 Private 仓库备份分支/Tag，不作为当前公开文件树的一部分。
+公开文件树只保留正式源码、配置模板、教程和必要维护工具；userdata、个人截图、运行日志及历史审计输出不进入仓库。

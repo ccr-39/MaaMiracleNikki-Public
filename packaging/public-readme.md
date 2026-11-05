@@ -1,6 +1,6 @@
 # MaaMiracleNikki Windows 使用说明
 
-当前尚未公开发布，计划下载入口为 [MaaMiracleNikki-Public Releases（当前不可用）](https://github.com/ccr-39/MaaMiracleNikki-Public/releases)。22 张局部识别模板的分发授权仍待确认，完整包暂不能公开上传。
+当前公开测试版为 [v0.1.2-rc.1 Pre-release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)。22 张局部识别模板的再分发授权仍未确认，不属于项目 MIT 授权范围；请保留素材和第三方来源说明。
 
 完整解压后，打开 MaaMiracleNikki 文件夹，双击 `MaaMiracleNikki.exe`。保留 `_internal`、`MMNUpdater.exe`、`mmn-update.json` 及其他随包文件，无需安装 Python、Node 或开发工具。不要只移动 EXE，不要在 ZIP 内直接运行。
 

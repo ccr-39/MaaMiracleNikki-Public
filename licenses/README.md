@@ -27,10 +27,10 @@ MaaAgentBinary 是 MaaFramework 的独立 Android 代理工具依赖，并非 Ma
 
 [corresponding-source-manifest.json](corresponding-source-manifest.json) 固定 13 份归档的版本、URL、SHA256 和大小，并保留已核对的 port SHA512。MaaDeps/vcpkg 归档含 ports、patches 和构建脚本；官方模型信息在 [ocr/official-models-20261104.json](ocr/official-models-20261104.json)。附加 Python 运行时原始声明保存在 `build-runtime-python-20261104/`。
 
-`tools/prepare_distribution.py` 将核验后的 13 份材料放在 Windows ZIP 旁的对应源码目录；未来分发时须同次提供。当前本地备齐不代表已向公众交付，也不代表游戏模板已获分发授权。
+`tools/prepare_distribution.py` 将核验后的 13 份材料放在 Windows ZIP 旁的对应源码目录；本版 Release 已同次提供归档、说明和清单；后续分发仍须提供适用材料。提供第三方源码不代表游戏模板已获分发授权。
 
 ## 库替换
 
 Qt/PySide/Shiboken 和 Maa 采用外部 DLL/PYD；不禁止为调试修改库而进行必要逆向工程，可利用兼容 ABI 的库及应用源码、spec、依赖与构建脚本重新组合。详见[源码与库替换说明](../docs/SOURCE_ACCESS_AND_RELINKING.md)。原始完整性清单不作为禁止运行本地修改库的签名锁。
 
-[素材说明](../docs/ASSET_NOTICE.md)中的 22 张 PNG 授权仍待确认，完整内容暂不能公开上传。
+[素材说明](../docs/ASSET_NOTICE.md)中的 22 张 PNG 授权仍待确认，公开发行不将它们纳入项目 MIT，也不代表已取得再分发授权。

@@ -19,7 +19,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/setup_ocr.ps1
 
 OCR 安装器校验 `det.onnx`、`rec.onnx`、`keys.txt`，安装与恢复细节见[模型说明](../assets/resource/model/ocr/README.md)。安装器固定获取 PaddlePaddle 官方 ONNX 原文件和既有已核实字典，只重命名模型，不执行权重转换或优化。全新源码副本直接运行安装器即可；已有旧模型默认不会被覆盖，只有明确需要迁移时使用 `-Force`，安装事务仍保留失败回滚。不要根据同名模型或文件哈希推定授权；来源状态见[第三方说明](../THIRD_PARTY_NOTICES.md)。
 
-22 张正式识别模板保留在开发源码中，其再分发授权尚未确认，见[素材清单](ASSET_NOTICE.md)。不要用完整游戏截图、无关图片或空文件替代缺失模板，也不要直接公开包含这些素材的工作目录。
+22 张正式识别模板保留在开发源码中，其再分发授权尚未确认，见[素材清单](ASSET_NOTICE.md)。不要用完整游戏截图、无关图片或空文件替代缺失模板，不要将含个人配置、运行截图或 userdata 的整个开发工作目录作为公开源码。
 
 ## 静态检查与开发测试
 
@@ -48,9 +48,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/build_windows.ps1 -Pyt
 
 参见[目录与回滚](WINDOWS_PACKAGE_LAYOUT.md)、[Windows 打包说明](WINDOWS_PACKAGING.md)与[更新协议](SOFTWARE_UPDATES.md)。
 
-## 未来公开发布
+## 公开源码与发布
 
-公开仓库计划为 `ccr-39/MaaMiracleNikki-Public`，不会通过公开旧开发仓库来替代该计划。目标同名仓库现为 Private 暂存，两个 Private 仓库均提供 v0.1.2-rc.1 Pre-release，尚未转为 Public，也没有公开 Release；素材授权、发行材料和发布动作见[发布状态](PUBLIC_RELEASE_STATUS.md)。
+公开仓库为 `ccr-39/MaaMiracleNikki-Public`，版本页为 [v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)。旧开发仓库继续保持 Private；公开仓库使用独立新历史，不携带旧历史、备份分支或私人资料。素材权属、发行材料和版本状态见[发布状态](PUBLIC_RELEASE_STATUS.md)。
 
 正式发布前需核对最终程序版本、Releases 附件名、更新器接受的资产格式、ZIP 根目录及清单。手动下载文件名与更新协议示例不能相互替代，须以该次正式发行实际采用的格式为准。旧版发行记录仅供追溯，不应直接作为当前发布操作步骤。
 
@@ -64,4 +64,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/build_windows.ps1 -Pyt
 
 输出包括 Windows ZIP、SHA256、13 份核验后的第三方源码归档及说明。此工具核对 EXE 内源码与当前源码、运行资源、模型、文件清单及归档哈希，不自动发布。`--runtime` 也可以使用已通过离线启动检查、且能逐模块证明与当前源码相同的运行目录；只改文档无需重复编译相同程序。
 
-未来公开仓库应复制当前提交的文件树，不复制旧 Private 仓库的 Git 历史、备份分支或本地未跟踪文件。两仓库使用同一份正式源码；手动 Actions 构建支持这两个明确仓库名，分支和 Tag 推送不会自动发布。
+公开源码只使用正式提交的文件树，不复制旧 Private 仓库的 Git 历史、备份分支或本地未跟踪文件。两仓库使用同一份正式源码；手动 Actions 构建支持这两个明确仓库名，分支和 Tag 推送不会自动发布。

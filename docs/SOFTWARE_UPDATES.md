@@ -1,12 +1,12 @@
 # Windows 在线更新（第二阶段）
 
-第三阶段工作流、Private 验证与首次公开发布步骤见 [GitHub Actions 发布](GITHUB_ACTIONS_RELEASE.md)。
+工作流、离线验证与发布维护步骤见 [GitHub Actions 发布](GITHUB_ACTIONS_RELEASE.md)。
 
 应用版本的唯一来源是 `assets/interface.json` 的 `version`，`updates/version.py` 提供严格 SemVer 比较，Qt 元数据、设置页、打包清单使用相同值。当前 `0.1.2-rc.1` 不会自动变成正式版本；发行前需显式设置稳定版本。
 
 ## 用户流程
 
-普通 GUI 启动两秒后，在后台匿名请求配置的发行仓库 `ccr-39/MaaMiracleNikki-Public`（当前为 Private 暂存，尚未公开） 的 `/releases/latest`。仅接受稳定版本，不使用文件时间。该接口、权限及匿名访问规则见 [GitHub Releases 官方文档](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)。无网络、404、限流和超时只在设置中显示状态，不弹窗、不阻塞任务。离线演练命令及 `--offline-check` 不触发网络。
+普通 GUI 启动两秒后，在后台匿名请求配置的发行仓库 `ccr-39/MaaMiracleNikki-Public`（Public，当前版本为 Pre-release） 的 `/releases/latest`。仅接受稳定版本，不使用文件时间。该接口、权限及匿名访问规则见 [GitHub Releases 官方文档](https://docs.github.com/en/rest/releases/releases#get-the-latest-release)。无网络、404、限流和超时只在设置中显示状态，不弹窗、不阻塞任务。离线演练命令及 `--offline-check` 不触发网络。
 
 “设置 → 软件更新”显示当前版本、最新稳定版、纯文本发行说明、进度和状态。可关闭启动检查或手动检查；发现更新时设置标签显示“有更新”。点击“下载更新”并确认后下载；下载完成后仍需点击“安装并重启”确认。任务运行时可选择等待队列完成，或通过现有安全停止流程停止后安装，也可取消安装等待。等待安装期间禁止启动新队列和定时任务。界面为 14 个正式任务组，奖励领取组展开为邮箱和每日任务两个执行入口，共 15 个执行入口。
 

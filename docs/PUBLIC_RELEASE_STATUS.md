@@ -1,16 +1,17 @@
 # 公开发布状态
 
-当前版本为 **v0.1.2-rc.1 Pre-release**，两个仓库目前均保持 **Private**：
+当前版本 **v0.1.2-rc.1 Pre-release** 已作为首次公开测试版提供：
 
-- [旧仓库版本页](https://github.com/ccr-39/MaaMiracleNikki/releases/tag/v0.1.2-rc.1)：Tag 固定于已实机验证的 b155f7d 源码。
-- [新暂存仓库版本页](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)：仓库虽名为 MaaMiracleNikki-Public，当前仍是 Private；源码使用全新根提交，不携带旧 Private 历史。
+- 公开仓库：[MaaMiracleNikki-Public](https://github.com/ccr-39/MaaMiracleNikki-Public)。
+- 下载入口：[v0.1.2-rc.1 Release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)，普通用户无需仓库授权即可查看和下载。
+- 原开发仓库继续保持 Private；公开仓库的 Git 历史独立创建，没有携带旧 Private 历史。
 
-只有获得仓库访问权限并登录 GitHub 的用户可以查看和下载；无权限时可能显示 404。两处 Windows ZIP 逐字节相同，SHA256 均为 `d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`，没有重打包维护者反馈实机 10/10 成功的原始包。业务逻辑仍以 b155f7d 为基准，本次只更新源码中的发布说明和下载链接；包内文档保留验证时的未公开状态，当前入口以仓库 README 和 Release 页面为准。
+业务源码沿用实机验证基准 b155f7d，保留 14 项正式任务、22 张必要 PNG 和 2 张 SVG。本次只更新发行文档、版本页和仓库可见性，不修改业务逻辑、固定 EXE、userdata 或既有 Tag。
 
-**公开上传仍暂停。** 当前源码与 Windows 包保留 22 张必要局部 PNG 和 2 张独立重绘 GUI SVG。PNG 的再分发权限尚未确认；只有解决此项，才能公开含这些素材的源码与 ZIP。MIT 只适用于有权授权的原创部分，不覆盖游戏画面和商标。见[素材清单](ASSET_NOTICE.md)。没有因 Private 暂存或测试成功而将其写成已经取得授权。
+Windows ZIP 为维护者反馈实机 10/10 成功的原始文件，未重新打包。SHA256：`d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`。Release 的 18 个附件保持原字节，其中含 13 份对应源码归档、说明/清单及独立许可附件。原 ZIP、附件和 Tag 中的历史文档可能仍记载 Private/候选阶段状态，当前公开状态以主分支 README 和版本页为准。
 
-两个 Private Pre-release 均随 Windows ZIP 提供 SHA256、13 份对应源码归档、对应源码 README/manifest 和独立许可证附件；版本、归档哈希与补丁材料沿用[既有分发方案](DISTRIBUTION_REMEDIATION_20261104.md)。这表示已向获准访问的仓库用户提供附件，不表示已经向公众交付，也不替代将来公开时的许可义务。
+版权归属与公开状态应区分：项目为非官方工具；有权授权的原创代码采用 MIT，游戏素材、美术和商标不属于该 MIT 授权范围。22 张游戏局部模板的再分发授权目前仍未确认；公开、局部裁剪、用途说明和免责声明均不代表已经取得授权。详见[素材说明](ASSET_NOTICE.md)、[第三方来源](../THIRD_PARTY_NOTICES.md)及[免责声明](../DISCLAIMER.md)。本次没有重新审核、修改或替换模板。
 
-未修改业务逻辑，未连接 ADB 或重复游戏测试，未覆盖固定 EXE。维护者反馈原始包实机测试 10/10 成功；不将其扩大为所有任务、系统或模拟器均已验收。
+公开前核查全部分支、Tag、可访问提交历史及作者信息、源码与18个附件，没有发现开发者个人配置或有效凭据。上游许可证中必须保留的署名，以及明确示例/通用本机地址，不视为开发者私人配置；未将 userdata、完整游戏截图或运行日志加入仓库。
 
-公开前需补齐覆盖 22 个具体文件及源码仓库/Windows ZIP 分发方式的权限依据，核对声明与附件，再将同名暂存仓库转为 Public；旧仓库始终保持 Private。内置更新只检查公开稳定版，当前 Private Pre-release 不会经自动更新提供。
+本次没有连接 ADB 或运行游戏任务，不将维护者测试反馈扩大为所有系统、模拟器或任务均已验收。内置更新只提供稳定版，本 Pre-release 请从版本页手动下载。

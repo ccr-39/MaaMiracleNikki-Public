@@ -4,7 +4,7 @@
 
 提供中文图形界面、任务与子选项选择、进度日志、安全停止、每日定时，以及指定 MuMu 实例的自动启动和完成后关闭。
 
-> **v0.1.2-rc.1 为 Private 测试版，尚未公开。** 旧仓库和名为 `MaaMiracleNikki-Public` 的新暂存仓库目前均为 Private，需 GitHub 仓库访问权限才能下载。22 张必要游戏模板的再分发权限尚未确认，因此暂不转为 Public；详见[素材说明](docs/ASSET_NOTICE.md)与[发布状态](docs/PUBLIC_RELEASE_STATUS.md)。
+> **首次公开测试版：[v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)（Pre-release）。** Windows 完整 ZIP 解压即可运行，无需安装 Python。项目为非官方工具；游戏素材不属于项目 MIT 授权范围，其再分发授权尚未确认，详见[素材说明](docs/ASSET_NOTICE.md)、[免责声明](DISCLAIMER.md)与[发布状态](docs/PUBLIC_RELEASE_STATUS.md)。
 
 [新手教程](docs/USER_GUIDE.md) · [GUI 说明](gui/README.md) · [文档目录](docs/README.md) · [更新记录](CHANGELOG.md)
 
@@ -14,10 +14,7 @@
 
 当前版本 **v0.1.2-rc.1 Pre-release**：
 
-- [旧 Private 仓库下载](https://github.com/ccr-39/MaaMiracleNikki/releases/tag/v0.1.2-rc.1)
-- [新 Private 暂存仓库下载](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)（仓库名称含 Public，目前仍是 Private）
-
-两处使用同一份维护者反馈实机测试 10/10 成功的原始 Windows ZIP，发布时未重打包。需先登录有访问权限的 GitHub 账号；无权限时可能看到 404，这不是公开下载入口。以下步骤用于获准访问的测试者：
+[打开 Release 下载页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)，选择 `MaaMiracleNikki-Windows-x64.zip` 及对应 `.sha256`，无需 GitHub 仓库授权。该附件是维护者反馈实机测试 10/10 成功的原始 Windows ZIP，本次公开未重打包。测试反馈不代表所有系统和模拟器均已验收。
 
 1. 下载 Release 附件中的 `MaaMiracleNikki-Windows-x64.zip` 和对应 `.sha256`，具体文件名以该版本说明为准。`Source code` 是开发源码，不是可直接运行的 Windows 程序。
 2. 完整解压到有写入权限的目录，打开 `MaaMiracleNikki` 文件夹，双击 `MaaMiracleNikki.exe`。不要在 ZIP 内运行，也不要只提取 EXE。
@@ -29,7 +26,7 @@
 Get-FileHash .\MaaMiracleNikki-Windows-x64.zip -Algorithm SHA256
 ```
 
-本版 Windows ZIP 的 SHA256：`d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`。包内文档保留实机验证时的未公开状态，当前私有下载入口以仓库 README 和 Release 页面为准。
+本版 Windows ZIP 的 SHA256：`d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`。为保持已验证 ZIP 完全不变，包内旧文档可能仍有 Private 或候选阶段说明；当前公开下载与发行状态以本仓库 README 和 Release 页面为准。
 
 ## 功能
 
@@ -112,7 +109,7 @@ ADB 是 MMN 与模拟器通信的工具，首次使用不需要输入命令。�
 | 登录一直等待 | 手动处理 QQ/微信授权和验证码；程序不代填账号密码，等待超时后会停止。 |
 | 任务没勾选、定时没运行 | 首次全部不选；检查已保存的勾选、定时开关、本地时间和程序是否保持运行。 |
 | 任务结束没关闭 MuMu | 检查开关、启动程序和实例映射；失败、部分完成、停止和离线演练均不触发关闭。 |
-| 无法检查更新 | 当前仅有 Private Pre-release；内置更新只检查公开稳定版，不提供本测试版，请从上方 Release 链接手动下载。 |
+| 无法检查更新 | 当前发布的是 Pre-release；内置更新只检查稳定版，不提供本测试版，请从上方 Release 链接手动下载。 |
 
 反馈时提供版本、模拟器、分辨率和复现步骤。日志与截图可能含个人信息，请先脱敏；不要上传整个 `userdata`、完整账号画面或 ADB 密钥。
 
