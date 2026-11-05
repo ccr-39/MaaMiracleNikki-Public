@@ -14,13 +14,15 @@
 
 当前版本 **v0.1.2-rc.1 Pre-release**：
 
-[打开 Release 下载页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)，选择 `MaaMiracleNikki-Windows-x64.zip` 及对应 `.sha256`，无需 GitHub 仓库授权。该附件是维护者反馈实机测试 10/10 成功的原始 Windows ZIP，本次公开未重打包。测试反馈不代表所有系统和模拟器均已验收。
+**[直接下载 Windows x64 ZIP](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.1/MaaMiracleNikki-Windows-x64.zip)** · [SHA256 校验文件](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.1/MaaMiracleNikki-Windows-x64.zip.sha256) · [Release 页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)
+
+普通用户只需下载 Windows ZIP，建议同时下载校验文件。其余 **16 个第三方对应源码及许可附件无需逐个下载**；程序所需运行库和许可说明已随 Windows ZIP 提供。无需 GitHub 仓库授权。该附件是维护者反馈实机测试 10/10 成功的原始 Windows ZIP，本次公开未重打包。测试反馈不代表所有系统和模拟器均已验收。
 
 1. 下载 Release 附件中的 `MaaMiracleNikki-Windows-x64.zip` 和对应 `.sha256`，具体文件名以该版本说明为准。`Source code` 是开发源码，不是可直接运行的 Windows 程序。
 2. 完整解压到有写入权限的目录，打开 `MaaMiracleNikki` 文件夹，双击 `MaaMiracleNikki.exe`。不要在 ZIP 内运行，也不要只提取 EXE。
 3. 保留同目录的 `_internal`、`MMNUpdater.exe`、`mmn-update.json` 及其余随包文件。首次运行会自动生成 `userdata`，保存配置与日志。
 
-需要校验下载完整性时，在 PowerShell 执行以下命令，将结果与同一 Release 的校验值比较：
+校验前，先打开保存 ZIP 的下载文件夹，在资源管理器地址栏输入 `powershell` 并按回车；在打开的 PowerShell 中执行以下命令，将输出的 `Hash` 与 `.sha256` 文件（可用记事本打开）或下方校验值比较，两者应完全一致（忽略大小写）。命令中的 `./`（下例写作 `.\`）表示当前文件夹；如已将 ZIP 改名，请替换为实际文件名：
 
 ```powershell
 Get-FileHash .\MaaMiracleNikki-Windows-x64.zip -Algorithm SHA256
@@ -111,7 +113,7 @@ ADB 是 MMN 与模拟器通信的工具，首次使用不需要输入命令。�
 | 任务结束没关闭 MuMu | 检查开关、启动程序和实例映射；失败、部分完成、停止和离线演练均不触发关闭。 |
 | 无法检查更新 | 当前发布的是 Pre-release；内置更新只检查稳定版，不提供本测试版，请从上方 Release 链接手动下载。 |
 
-反馈时提供版本、模拟器、分辨率和复现步骤。日志与截图可能含个人信息，请先脱敏；不要上传整个 `userdata`、完整账号画面或 ADB 密钥。
+遇到问题请通过 [GitHub Issues](https://github.com/ccr-39/MaaMiracleNikki-Public/issues) 反馈，提供版本、模拟器、分辨率和复现步骤。日志与截图可能含个人信息，请先脱敏；不要上传整个 `userdata`、完整账号画面或 ADB 密钥。
 
 ## 源码运行与构建
 
