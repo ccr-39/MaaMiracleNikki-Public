@@ -9,7 +9,7 @@
         "基于 MaaFramework 的《奇迹暖暖》日常自动化工具。",
         "首次运行请先执行“连接与截图测试”；实验任务不会处理付费弹窗。"
     ],
-    "version": "0.1.2-rc.1",
+    "version": "0.1.2-rc.2",
     "controller": [
         {
             "name": "Android",

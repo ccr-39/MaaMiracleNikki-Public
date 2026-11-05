@@ -1,5 +1,13 @@
 # 更新记录
 
+## 0.1.2-rc.2（Pre-release）
+
+- 修复发行包保留发布前状态说明的问题，随包教程与公开文档同步。
+- 精简 GUI 用户说明，将线程、回调和任务入口实现移至开发文档。
+- 更新真实 GUI 默认配置预览及 Windows 发行材料，保留 14 项任务、连接方式、随机延迟与配置兼容性。
+
+[下载本版](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2) · [安装教程](docs/USER_GUIDE.md)
+
 ## 0.1.2-rc.1（Pre-release）
 
 ### 新增与改进

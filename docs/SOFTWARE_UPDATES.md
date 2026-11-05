@@ -2,7 +2,7 @@
 
 工作流、离线验证与发布维护步骤见 [GitHub Actions 发布](GITHUB_ACTIONS_RELEASE.md)。
 
-应用版本的唯一来源是 `assets/interface.json` 的 `version`，`updates/version.py` 提供严格 SemVer 比较，Qt 元数据、设置页、打包清单使用相同值。当前 `0.1.2-rc.1` 不会自动变成正式版本；发行前需显式设置稳定版本。
+应用版本的唯一来源是 `assets/interface.json` 的 `version`，`updates/version.py` 提供严格 SemVer 比较，Qt 元数据、设置页、打包清单使用相同值。当前 `0.1.2-rc.2` 不会自动变成正式版本；发行前需显式设置稳定版本。
 
 ## 用户流程
 

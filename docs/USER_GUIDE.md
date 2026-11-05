@@ -1,10 +1,10 @@
 # MMN 中文新手教程
 
-适用于 Windows 10/11 x64。请从 [v0.1.2-rc.1 Release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1) 下载完整 Windows ZIP。首次使用前请了解[任务与消费提醒](../README.md#功能)和[使用风险](../DISCLAIMER.md)。
+适用于 Windows 10/11 x64。请从 [v0.1.2-rc.2 Release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2) 下载完整 Windows ZIP。首次使用前请了解[任务与消费提醒](../README.md#功能)和[使用风险](../DISCLAIMER.md)。
 
 ## 1. 下载、校验与解压
 
-1. 打开[公开测试版下载页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)，无需申请仓库访问权限。下载完整 Windows ZIP，不要下载自动生成的 Source code 作为运行包。
+1. 打开[公开测试版下载页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2)，无需申请仓库访问权限。下载完整 Windows ZIP，不要下载自动生成的 Source code 作为运行包。
 2. 下载 Windows x64 ZIP 及同名 `.sha256`。本版文件名为 `MaaMiracleNikki-Windows-x64.zip`；`Source code` 不是可直接运行的程序。
 3. 在资源管理器中打开保存 ZIP 的下载文件夹（解压前的 ZIP 所在位置），点击地址栏输入 `powershell` 并按回车。在打开的 PowerShell 中执行下方命令；它只读取 ZIP，不启动程序。命令中的 `.\` 表示当前文件夹；如 ZIP 已改名，请使用实际文件名。用记事本打开下载的 `.sha256`，将其中的 SHA256 与命令输出的 `Hash` 比较，应完全一致（忽略大小写）；不一致时先重新下载，不要运行。
 4. 完整解压到可写目录，如 `D:\Apps\MMN`。打开解压后的 `MaaMiracleNikki` 文件夹，双击 `MaaMiracleNikki.exe`；不要在 ZIP 内启动，不要只提取 EXE。保留相邻 `_internal`、`MMNUpdater.exe`、`mmn-update.json` 和所有随包说明。无需安装 Python、Node 或 CMD 启动器。

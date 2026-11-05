@@ -15,6 +15,7 @@
 - [源码运行、构建和干净 ZIP 导出](DEVELOPMENT.md)
 - [安全构建目录与回滚](WINDOWS_PACKAGE_LAYOUT.md)
 - [Windows 依赖与目录](WINDOWS_PACKAGING.md)
+- [GUI 开发与任务集成](GUI_DEVELOPMENT.md)
 - [手动 Actions 构建](GITHUB_ACTIONS_RELEASE.md)
 - [公开发布状态](PUBLIC_RELEASE_STATUS.md)
 - [版本说明](RELEASE_NOTES.md)

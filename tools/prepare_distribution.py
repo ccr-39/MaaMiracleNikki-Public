@@ -60,6 +60,8 @@ def check_public_files(package):
         if not path.is_file():
             continue
         name = path.relative_to(package).as_posix()
+        if path.name.casefold() == 'publication_blocked.txt':
+            raise ValueError('Obsolete publication marker in runtime: ' + name)
         if (is_mutable(name) or set(Path(name).parts) & {'__pycache__', 'tests', 'fixtures', '.git'}
                 or path.name.startswith('test_') or path.suffix.lower() in {'.log', '.bak', '.tmp', '.pem', '.key', '.db', '.pyc'}):
             raise ValueError('Private/generated file in runtime: ' + name)
@@ -67,8 +69,15 @@ def check_public_files(package):
             raise ValueError('Excluded optional/legacy native library: ' + name)
         if path.suffix.lower() in {'.py', '.md', '.json', '.txt', '.ps1', '.svg'}:
             text = path.read_text(encoding='utf-8-sig', errors='replace')
+            # A fixed upstream MaaFramework file contains a documented LogDir
+            # example, not a developer profile. Only mask that comment in the
+            # reviewed file; credential checks still inspect the original text.
+            path_text = text
+            if (name == '_internal/maa/define.py'
+                    and sha(path) == '0ea4b94daa4a8bd24a9a31b17fe74769f546b559f36afc042b3dbbec66755f76'):
+                path_text = re.sub(r'(?m)^\s*# value: string, eg:.*; val_size: string length$', '', text)
             if (re.search(r'gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{25,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----', text)
-                    or has_sensitive_local_path(text)):
+                    or has_sensitive_local_path(path_text)):
                 raise ValueError('Credential or concrete user path: ' + name)
 
 
@@ -104,6 +113,7 @@ def prepare(runtime, source_archives, output):
         copy_file(ROOT / name, package / name)
     copy_file(ROOT / 'LICENSE', package / '_internal/LICENSE')
     copy_file(ROOT / 'THIRD_PARTY_NOTICES.md', package / '_internal/THIRD_PARTY_NOTICES.md')
+    copy_file(ROOT / 'DISCLAIMER.md', package / '_internal/DISCLAIMER.md')
     for folder in ('assets', 'gui/icons'):
         for path in (ROOT / folder).rglob('*'):
             if path.is_file() and '__pycache__' not in path.parts:
@@ -135,9 +145,7 @@ def prepare(runtime, source_archives, output):
     quickstart = '## MuMu / ADB' + project_readme.split('## MuMu / ADB', 1)[1].split('## 源码运行与构建', 1)[0]
     readme += '\n' + quickstart.replace('](config/gui.example.json)', '](docs/gui.example.json)')
     (package / 'README.md').write_text(readme, encoding='utf-8')
-    (package / 'PUBLICATION_BLOCKED.txt').write_text(
-        'NOT PUBLISHED. Redistribution permission for 22 game templates remains unconfirmed.\n'
-        'See docs/ASSET_NOTICE.md and docs/PUBLIC_RELEASE_STATUS.md.\n', encoding='utf-8')
+
 
     # Validate all app modules against the actual EXE/PYZ without running tasks.
     validate_layout(package)
@@ -184,7 +192,7 @@ def prepare(runtime, source_archives, output):
         'source_archive_bytes': sum(entry['bytes'] for entry in archives),
         'source_embedded_code_match': True, 'models_match_installer': True,
         'zip_crc_manifest_hashes': True, 'published': False,
-        'publication_blocker': '22 game templates lack confirmed redistribution permission'}
+        'game_template_redistribution_authorization': 'unconfirmed; see docs/ASSET_NOTICE.md'}
     (output / 'DISTRIBUTION_RESULT.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     return result
 

@@ -8,4 +8,4 @@
 
 对外分发的完整包与对应源码材料应使用[开发指南](DEVELOPMENT.md)中的 `prepare_distribution.py` 准备，核对全部来源附件和文件清单。正式版本的在线更新资产规则见[更新协议](SOFTWARE_UPDATES.md)。
 
-公开仓库为 [MaaMiracleNikki-Public](https://github.com/ccr-39/MaaMiracleNikki-Public)，已提供 [v0.1.2-rc.1 Pre-release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)。手动构建不会自动替换现有 Release 附件；发布时须核对发行材料，保留已发布的 Tag 和附件。版本与下载入口见[发布与下载](PUBLIC_RELEASE_STATUS.md)。
+公开仓库为 [MaaMiracleNikki-Public](https://github.com/ccr-39/MaaMiracleNikki-Public)，已提供 [v0.1.2-rc.2 Pre-release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2)。手动构建不会自动替换现有 Release 附件；发布时须核对发行材料，保留已发布的 Tag 和附件。版本与下载入口见[发布与下载](PUBLIC_RELEASE_STATUS.md)。

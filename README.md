@@ -4,17 +4,19 @@
 
 提供中文图形界面、任务与子选项选择、进度日志、安全停止、每日定时，以及指定 MuMu 实例的自动启动和完成后关闭。
 
-当前版本：[v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)（Pre-release）。Windows 完整 ZIP 解压即可运行，无需安装 Python。
+当前版本：[v0.1.2-rc.2](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2)（Pre-release）。Windows 完整 ZIP 解压即可运行，无需安装 Python。
 
 [新手教程](docs/USER_GUIDE.md) · [GUI 说明](gui/README.md) · [文档目录](docs/README.md) · [更新记录](CHANGELOG.md)
+
+![MMN 主界面：默认未选任务、未配置设备，运行日志为空](docs/images/main-window.png)
 
 ## 下载与安装
 
 支持 **Windows 10/11 x64**。普通用户使用 Windows ZIP，**无需安装 Python、Node 或开发工具**；游戏、模拟器和 ADB 需自行准备。
 
-当前版本 **v0.1.2-rc.1 Pre-release**：
+当前版本 **v0.1.2-rc.2 Pre-release**：
 
-**[直接下载 Windows x64 ZIP](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.1/MaaMiracleNikki-Windows-x64.zip)** · [SHA256 校验文件](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.1/MaaMiracleNikki-Windows-x64.zip.sha256) · [Release 页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)
+**[直接下载 Windows x64 ZIP](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.2/MaaMiracleNikki-Windows-x64.zip)** · [SHA256 校验文件](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.2/MaaMiracleNikki-Windows-x64.zip.sha256) · [Release 页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2)
 
 普通用户只需下载 Windows ZIP，建议同时下载校验文件。其余 **16 个第三方对应源码及许可附件无需逐个下载**；程序所需运行库和许可说明已随 Windows ZIP 提供。
 
@@ -28,7 +30,7 @@
 Get-FileHash .\MaaMiracleNikki-Windows-x64.zip -Algorithm SHA256
 ```
 
-本版 Windows ZIP 的 SHA256：`d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`。
+本版 Windows ZIP 的 SHA256：`9df5655d76fd78633da66eb2f4f7818be2855d6ff15ae13986a87ddecd24deac`。
 
 ## 功能
 

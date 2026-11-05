@@ -1,6 +1,16 @@
 # MaaMiracleNikki Windows 使用说明
 
-下载 [v0.1.2-rc.1 Windows 测试版](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)，通过中文图形界面选择《奇迹暖暖》国服日常任务。
+下载 [v0.1.2-rc.2 Windows 测试版](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.2)，通过中文图形界面选择《奇迹暖暖》国服日常任务。
+
+![MMN 主界面：默认未选任务、未配置设备，运行日志为空](../docs/images/main-window.png)
+
+[Windows ZIP](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.2/MaaMiracleNikki-Windows-x64.zip) · [SHA256 校验文件](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.2/MaaMiracleNikki-Windows-x64.zip.sha256)
+
+校验时打开保存 ZIP 的下载文件夹，在资源管理器地址栏输入 `powershell` 并回车，执行以下命令。将输出的 `Hash` 与同版 `.sha256` 文件中的值比较，应完全一致（忽略大小写）：
+
+```powershell
+Get-FileHash .\MaaMiracleNikki-Windows-x64.zip -Algorithm SHA256
+```
 
 完整解压后，打开 MaaMiracleNikki 文件夹，双击 `MaaMiracleNikki.exe`。保留 `_internal`、`MMNUpdater.exe`、`mmn-update.json` 及其他随包文件，无需安装 Python、Node 或开发工具。不要只移动 EXE，不要在 ZIP 内直接运行。
 

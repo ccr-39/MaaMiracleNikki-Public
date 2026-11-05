@@ -1,4 +1,4 @@
-# Build/deploy via tools/build_windows.ps1 (private staging, checks and rollback).
+# Build/deploy via tools/build_windows.ps1 (isolated staging, checks and rollback).
 from pathlib import Path
 import hashlib
 from PyInstaller.utils.hooks import collect_all
