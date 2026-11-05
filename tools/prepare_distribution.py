@@ -33,6 +33,28 @@ def copy_file(source, target):
     shutil.copyfile(source, target)
 
 
+def has_sensitive_local_path(text):
+    """Match concrete Windows user/checkouts paths, not relative license paths."""
+    normalized = re.sub(r'\\+', '/', text).casefold()
+    absolute_paths = re.findall(
+        r'''(?<![a-z0-9_])[a-z]:/+(?:[^\r\n"'`<>|?*]+)''', normalized)
+    checkout = ROOT.resolve().as_posix().casefold().rstrip('/')
+    development_parts = {
+        '.git', '.venv', 'venv', '.vscode', '.idea',
+        'pycharmprojects', 'workspace', 'workspaces', 'checkouts', 'repos',
+    }
+    for value in absolute_paths:
+        path = re.sub('/+', '/', value).rstrip(' .,;:)')
+        parts = path.split('/')
+        if len(parts) >= 3 and parts[1] in {'users', 'documents and settings'}:
+            return True
+        if set(parts[1:]) & development_parts:
+            return True
+        if path == checkout or path.startswith(checkout + '/'):
+            return True
+    return False
+
+
 def check_public_files(package):
     for path in package.rglob('*'):
         if not path.is_file():
@@ -45,7 +67,8 @@ def check_public_files(package):
             raise ValueError('Excluded optional/legacy native library: ' + name)
         if path.suffix.lower() in {'.py', '.md', '.json', '.txt', '.ps1', '.svg'}:
             text = path.read_text(encoding='utf-8-sig', errors='replace')
-            if re.search(r'gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{25,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|(?i:[A-Z]:[\\/]+Users[\\/]+ASUS)', text):
+            if (re.search(r'gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{25,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----', text)
+                    or has_sensitive_local_path(text)):
                 raise ValueError('Credential or concrete user path: ' + name)
 
 

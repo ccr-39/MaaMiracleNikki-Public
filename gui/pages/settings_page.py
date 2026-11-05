@@ -49,7 +49,7 @@ class SettingsPage(QWidget):
         self.connection_profile = QLabel("通用 ADB（支持 MuMu / 雷电 / 蓝叠 / 夜神等）")
         self.connection_profile.setWordWrap(True)
         self.adb_address = QLineEdit(config.adb_address)
-        self.adb_address.setPlaceholderText("例如 127.0.0.1:16384 或 emulator-5554")
+        self.adb_address.setPlaceholderText("127.0.0.1:<实际数字端口> 或设备序列号")
         self.adb_address.setClearButtonEnabled(True)
         self.adb_path = QLineEdit(config.adb_path)
         self.adb_path.setPlaceholderText("留空自动查找，或选择 adb.exe")

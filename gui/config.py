@@ -37,7 +37,7 @@ def validate_connection_fields(config, *, require_address=True):
             except ValueError as exc:
                 raise ValueError("IP 地址格式无效，请检查连接地址") from exc
     elif re.fullmatch(r"\d+(?:\.\d+){3}", address):
-        raise ValueError("IP 地址后需要填写端口，例如 127.0.0.1:16416")
+        raise ValueError("IP 地址后需要填写端口：127.0.0.1:<实例ADB端口>（将占位符替换为实际数字端口）")
     elif not re.fullmatch(r"[A-Za-z0-9_.-]+", address):
         raise ValueError("请填写 IP:端口或有效的设备序列号")
     if any(char in config.adb_path for char in "\r\n\x00"):

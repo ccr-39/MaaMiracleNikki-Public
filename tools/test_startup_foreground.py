@@ -24,7 +24,7 @@ from check_project import check_pipeline_references  # noqa: E402
 class FakeController:
     info = {
         "adb_path": r"D:\fake\adb.exe",
-        "adb_serial": "127.0.0.1:16416",
+        "adb_serial": "127.0.0.1:5555",
     }
 
 

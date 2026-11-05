@@ -250,7 +250,7 @@ def build_parser(available_tasks: dict[str, str]) -> argparse.ArgumentParser:
     parser.add_argument(
         "--device-serial",
         metavar="SERIAL",
-        help="显式指定设备序列号，例如 127.0.0.1:16416；默认仍读取 config/device.json",
+        help="显式指定设备序列号，例如 127.0.0.1:<实例ADB端口>（将占位符替换为实际数字端口）；默认仍读取 config/device.json",
     )
     parser.add_argument(
         "--init-only",
