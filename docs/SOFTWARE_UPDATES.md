@@ -43,11 +43,11 @@ GUI 使用当前已安装且哈希与本地发行清单一致的独立更新器�
 
 默认用户数据为 EXE 同目录 `userdata`，原目录更新时复制保留，旧备份同时保留。旧便携目录的 `config/cache/logs/state/images` 及 `gui.json/runtime.json/device.json`（根目录或 `_internal`）也复制保留；包内禁止提供这些文件。安装目录内仅允许标准 `userdata`，其他内嵌数据目录或符号链接/重解析点拒绝更新。更新器自身、工作目录和请求文件放在安装目录外，避免更新时文件锁定。共享 LocalAppData 不自动导入、不修改。Python 开发模式仅支持检查/下载，安装器拒绝替换源码目录。
 
-## 打包及第三阶段接口
+## 构建与发布接口
 
-现有 `tools/build_windows.ps1` 继续私有 staging、验证、部署到 `dist/MaaMiracleNikki/MaaMiracleNikki.exe`，保留开发测试固定路径。spec 新增独立更新器，将两个 EXE 对象交给同一个 COLLECT，保持更新器位于发行根目录；参考 [PyInstaller spec 官方文档](https://pyinstaller.org/en/stable/spec-files.html)。构建验证会读取主程序及更新器归档、比对当前源码，生成发行清单，并在写入部署事务 ID 后重新计算清单。没有对运行中目录直接构建的操作。
+`tools/build_windows.ps1` 在独立暂存目录构建，验证后部署到 `dist/MaaMiracleNikki/`。spec 将主程序与独立更新器交给同一个 COLLECT，保持更新器位于发行根目录；参考 [PyInstaller spec 官方文档](https://pyinstaller.org/en/stable/spec-files.html)。构建验证会读取主程序及更新器归档、比对当前源码，生成发行清单，并在写入部署事务 ID 后重新计算清单。没有对运行中目录直接构建的操作。
 
-以下基线构建说明保留自更新功能开发阶段，不代表本轮文档整理执行了打包或发布。已有旧 EXE 无法凭源码修改获得更新能力，需确认后构建一次带更新器的基线发行版。现有不含更新器/清单的构建不能通过 `--reuse` 升级为新基线。
+不含更新器的旧 EXE 无法仅凭源码修改获得更新能力，须使用带更新器的完整发行版。现有不含更新器/清单的构建不能通过 `--reuse` 升级为新基线。
 
 已构建且验证的稳定发行目录可用以下命令导出本地资产，不发布：
 
@@ -55,7 +55,7 @@ GUI 使用当前已安装且哈希与本地发行清单一致的独立更新器�
 python tools/release_bundle.py --release dist/MaaMiracleNikki --output build/release-assets
 ```
 
-第三阶段 GitHub Actions 需：Windows x64 / 固定 Python 和依赖；准备已校验 OCR 资源；校验 tag 与 interface 版本一致；运行完整离线回归；在独立工作区构建并验证两个 EXE；调用上述工具生成 ZIP/SHA256；仅在授权的正式 tag 流程上传到对应稳定 Release 并填写中文说明。还应增加干净 Windows、中文/空格路径下的真实打包升级验收；可进一步引入 Authenticode、独立签名清单与备份清理策略。用户更新不需要 Actions 权限或 Token。
+后续稳定版自动发布流程需：Windows x64 / 固定 Python 和依赖；准备已校验 OCR 资源；校验 tag 与 interface 版本一致；运行完整离线回归；在独立工作区构建并验证两个 EXE；调用上述工具生成 ZIP/SHA256；仅在授权的正式 tag 流程上传到对应稳定 Release 并填写中文说明。还应增加干净 Windows、中文/空格路径下的真实打包升级验收；可进一步引入 Authenticode、独立签名清单与备份清理策略。用户更新不需要 Actions 权限或 Token。
 
 ## 离线验证
 

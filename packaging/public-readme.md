@@ -1,6 +1,6 @@
 # MaaMiracleNikki Windows 使用说明
 
-当前公开测试版为 [v0.1.2-rc.1 Pre-release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)。22 张局部识别模板的再分发授权仍未确认，不属于项目 MIT 授权范围；请保留素材和第三方来源说明。
+下载 [v0.1.2-rc.1 Windows 测试版](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)，通过中文图形界面选择《奇迹暖暖》国服日常任务。
 
 完整解压后，打开 MaaMiracleNikki 文件夹，双击 `MaaMiracleNikki.exe`。保留 `_internal`、`MMNUpdater.exe`、`mmn-update.json` 及其他随包文件，无需安装 Python、Node 或开发工具。不要只移动 EXE，不要在 ZIP 内直接运行。
 

@@ -23,8 +23,8 @@
 
 - [项目许可](../LICENSE)与[免责声明](../DISCLAIMER.md)
 - [第三方依赖](../THIRD_PARTY_NOTICES.md)与[原始附件](../licenses/README.md)
-- [22 张正式模板的素材说明](ASSET_NOTICE.md)
+- [素材与版权说明](ASSET_NOTICE.md)
 - [对应源码和库替换](SOURCE_ACCESS_AND_RELINKING.md)
-- [已有分发整改](DISTRIBUTION_REMEDIATION_20261104.md)
+- [运行库分发说明](DISTRIBUTION_REMEDIATION_20261104.md)
 
-公开文件树只保留正式源码、配置模板、教程和必要维护工具；userdata、个人截图、运行日志及历史审计输出不进入仓库。
+问题反馈请使用 [GitHub Issues](https://github.com/ccr-39/MaaMiracleNikki-Public/issues)，提交前先检查并脱敏日志和截图。

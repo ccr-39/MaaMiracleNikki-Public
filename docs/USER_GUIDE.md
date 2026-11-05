@@ -1,6 +1,6 @@
 # MMN 中文新手教程
 
-适用于 Windows 10/11 x64。当前提供 v0.1.2-rc.1 公开 Pre-release，可从 GitHub Release 下载完整 Windows ZIP；发布状态见[发布说明](PUBLIC_RELEASE_STATUS.md)。MMN 是非官方《奇迹暖暖》日常自动化工具，与游戏运营方无关联。自动化可能违反游戏服务条款，导致账号限制或资源损失；游戏更新可能使识别失效。请先阅读 [README 的功能、风险与许可证](../README.md)，自行决定是否使用。
+适用于 Windows 10/11 x64。请从 [v0.1.2-rc.1 Release](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1) 下载完整 Windows ZIP。首次使用前请了解[任务与消费提醒](../README.md#功能)和[使用风险](../DISCLAIMER.md)。
 
 ## 1. 下载、校验与解压
 
@@ -70,7 +70,7 @@ MMN 可最小化，但必须保持运行；**不包含 Windows 开机自启服�
 
 ## 6. 更新、备份与配置迁移
 
-本版已公开。内置更新器配置的目标是 `ccr-39/MaaMiracleNikki-Public`，只匿名检查稳定版，不自动安装 Pre-release；本测试版需从本教程上方的 Release 链接手动下载。软件更新设置可关闭启动检查，也可手动检查、下载与确认安装；源码运行仅检查与下载，不替换源码。
+内置更新只检查稳定版，不自动安装 Pre-release；本测试版请从本教程上方的 Release 链接手动下载。软件更新设置可关闭启动检查，也可手动检查、下载与确认安装；源码运行仅检查与下载，不替换源码。
 
 更新前退出 MMN，备份整个 `userdata` 和旧完整程序。将新版**完整** `MaaMiracleNikki` 目录内容覆盖到旧 EXE 所在目录，保留原 `userdata`；不要误套一层同名目录，也不要只替换 EXE。同目录保留设置，新目录会生成默认配置。不要混用不同版本的 `_internal`。
 

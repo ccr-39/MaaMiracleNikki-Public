@@ -4,7 +4,7 @@
 
 提供中文图形界面、任务与子选项选择、进度日志、安全停止、每日定时，以及指定 MuMu 实例的自动启动和完成后关闭。
 
-> **首次公开测试版：[v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)（Pre-release）。** Windows 完整 ZIP 解压即可运行，无需安装 Python。项目为非官方工具；游戏素材不属于项目 MIT 授权范围，其再分发授权尚未确认，详见[素材说明](docs/ASSET_NOTICE.md)、[免责声明](DISCLAIMER.md)与[发布状态](docs/PUBLIC_RELEASE_STATUS.md)。
+当前版本：[v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)（Pre-release）。Windows 完整 ZIP 解压即可运行，无需安装 Python。
 
 [新手教程](docs/USER_GUIDE.md) · [GUI 说明](gui/README.md) · [文档目录](docs/README.md) · [更新记录](CHANGELOG.md)
 
@@ -16,19 +16,19 @@
 
 **[直接下载 Windows x64 ZIP](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.1/MaaMiracleNikki-Windows-x64.zip)** · [SHA256 校验文件](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/download/v0.1.2-rc.1/MaaMiracleNikki-Windows-x64.zip.sha256) · [Release 页面](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)
 
-普通用户只需下载 Windows ZIP，建议同时下载校验文件。其余 **16 个第三方对应源码及许可附件无需逐个下载**；程序所需运行库和许可说明已随 Windows ZIP 提供。无需 GitHub 仓库授权。该附件是维护者反馈实机测试 10/10 成功的原始 Windows ZIP，本次公开未重打包。测试反馈不代表所有系统和模拟器均已验收。
+普通用户只需下载 Windows ZIP，建议同时下载校验文件。其余 **16 个第三方对应源码及许可附件无需逐个下载**；程序所需运行库和许可说明已随 Windows ZIP 提供。
 
 1. 下载 Release 附件中的 `MaaMiracleNikki-Windows-x64.zip` 和对应 `.sha256`，具体文件名以该版本说明为准。`Source code` 是开发源码，不是可直接运行的 Windows 程序。
 2. 完整解压到有写入权限的目录，打开 `MaaMiracleNikki` 文件夹，双击 `MaaMiracleNikki.exe`。不要在 ZIP 内运行，也不要只提取 EXE。
 3. 保留同目录的 `_internal`、`MMNUpdater.exe`、`mmn-update.json` 及其余随包文件。首次运行会自动生成 `userdata`，保存配置与日志。
 
-校验前，先打开保存 ZIP 的下载文件夹，在资源管理器地址栏输入 `powershell` 并按回车；在打开的 PowerShell 中执行以下命令，将输出的 `Hash` 与 `.sha256` 文件（可用记事本打开）或下方校验值比较，两者应完全一致（忽略大小写）。命令中的 `./`（下例写作 `.\`）表示当前文件夹；如已将 ZIP 改名，请替换为实际文件名：
+校验前，先打开保存 ZIP 的下载文件夹，在资源管理器地址栏输入 `powershell` 并按回车；在打开的 PowerShell 中执行以下命令，将输出的 `Hash` 与 `.sha256` 文件（可用记事本打开）或下方校验值比较，两者应完全一致（忽略大小写）。命令中的 `.\` 表示当前文件夹；如已将 ZIP 改名，请替换为实际文件名：
 
 ```powershell
 Get-FileHash .\MaaMiracleNikki-Windows-x64.zip -Algorithm SHA256
 ```
 
-本版 Windows ZIP 的 SHA256：`d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`。为保持已验证 ZIP 完全不变，包内旧文档可能仍有 Private 或候选阶段说明；当前公开下载与发行状态以本仓库 README 和 Release 页面为准。
+本版 Windows ZIP 的 SHA256：`d8d23a0a542a150cba89de125ddb77064d48192f0ab8d17aecaf33b1cc07f41b`。
 
 ## 功能
 
@@ -135,14 +135,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/build_windows.ps1 -Pyt
 
 完整步骤、模型说明、静态检查和发布目录要求见[开发指南](docs/DEVELOPMENT.md)。离线演练不操作游戏，也不代表真实任务已经验收。
 
-## 声明、许可与致谢
+## 声明与许可
 
-MMN 是非官方工具，与游戏开发商、发行商、腾讯、叠纸及 MAA Team 无隶属或背书关系。自动化可能违反游戏服务条款，带来账号限制、误操作和资源损失；使用前请阅读[免责声明](DISCLAIMER.md)。
+MMN 是非官方工具，与游戏运营方及 MAA Team 无隶属或背书关系。自动化可能带来账号限制、误操作和资源损失，使用前请阅读[免责声明](DISCLAIMER.md)。
 
-有权授权的原创代码与文档采用 [MIT License](LICENSE)。**游戏截图、识别模板、美术与商标不属于项目 MIT 授权范围**；第三方代码、模型和运行库遵循各自条款，见[第三方来源](THIRD_PARTY_NOTICES.md)和[素材说明](docs/ASSET_NOTICE.md)。注明来源、非商业用途和免责声明不代替素材授权。
+有权授权的原创代码与文档采用 [MIT License](LICENSE)；游戏素材、美术和商标不在项目 MIT 授权范围内，第三方组件遵循各自条款。详见[素材说明](docs/ASSET_NOTICE.md)、[第三方来源](THIRD_PARTY_NOTICES.md)和[许可及对应源码](licenses/README.md)。
 
-感谢 [MaaFramework](https://github.com/MaaXYZ/MaaFramework)、[MaaPracticeBoilerplate](https://github.com/MaaXYZ/MaaPracticeBoilerplate) 及相关依赖的开发者。README 的组织参考了 [MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)，具体来源关系见第三方说明；MMN 不代表这些项目。
+## 致谢
 
-## 分发材料
-
-构建使用已固定的官方 OCR 模型，保留第三方原始许可证；Windows 包排除未使用的 FFmpeg 和旧兼容 UCRT。对应源码的 13 份归档、版本与哈希见[分发材料清单](licenses/corresponding-source-manifest.json)。构建与导出见[开发指南](docs/DEVELOPMENT.md)，这些材料不改变游戏模板授权仍待确认的状态。
+感谢 [MaaFramework](https://github.com/MaaXYZ/MaaFramework)、[MaaPracticeBoilerplate](https://github.com/MaaXYZ/MaaPracticeBoilerplate) 及相关依赖的开发者。文档组织参考了 [MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)，来源关系见[第三方说明](THIRD_PARTY_NOTICES.md)。

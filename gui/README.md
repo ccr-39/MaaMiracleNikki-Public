@@ -187,7 +187,7 @@ python -m gui.main --dry-run
 每日任务页右侧只订阅 `QueueWorker.user_event`，事件契约在 `user_events.py`：
 每个事件携带类型、时间、等级、中文文本及可选任务名称。
 调度层明确发布连接、开始、完成及用时、失败、停止、队列完成和环境释放事件。
-`business_events.py` 兼容已有业务输出，按当前正式任务和已审计的完整格式/节点事件
+`business_events.py` 兼容已有业务输出，按当前正式任务和支持的完整格式/节点事件
 转换次数、投票进度、无免费机会、签到/邮箱跳过、好友送心结果和返回主页等关键结果。
 它采用已知来源的窄范围映射，不按关键词黑名单粗暴删日志，也不据日志推断任务成功或失败。
 未知文本、原始 focus、GlobalTransientGuard、StateRecovery、内部节点、分数、OCR 坐标、
@@ -247,7 +247,7 @@ GUI 默认不启动模拟器；只有明确开启“自动启动模拟器”后�
 旧配置按原邮箱和每日任务选择迁移，并保留好友邮件设置；关闭记忆选择则下次均不勾选。
 启动队列前只读验证可执行入口的 interface 声明和 Pipeline 节点；CLI 原入口不变。
 
-| GUI 名称 | 正式入口 | 审计文件（assets/resource/pipeline/） |
+| GUI 名称 | 正式入口 | Pipeline 文件（assets/resource/pipeline/） |
 | --- | --- | --- |
 | 启动 | QJNN_StartAndEnterHome | 10_startup.json |
 | 签到 | QJNN_Signin | 30_signin.json |

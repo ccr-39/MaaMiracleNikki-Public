@@ -31,7 +31,7 @@ OCR 安装器校验 `det.onnx`、`rec.onnx`、`keys.txt`，安装与恢复细节
 .\.venv\Scripts\python.exe -m pytest tools -q --without-private-samples
 ```
 
-部分回归需要未提交的本地截图；缺失样本应明确跳过，不算作通过。详细 GUI 设置与实现见 [GUI 说明](../gui/README.md)。保留的测试用于后续维护，不要求用户运行；旧开发资料在备份分支与 Tag 中保留。
+部分回归需要未提交的本地截图；缺失样本应明确跳过，不算作通过。详细 GUI 设置与实现见 [GUI 说明](../gui/README.md)。这些测试供开发维护使用，普通用户无需运行。
 
 ## Windows 构建
 
@@ -50,7 +50,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/build_windows.ps1 -Pyt
 
 ## 公开源码与发布
 
-公开仓库为 `ccr-39/MaaMiracleNikki-Public`，版本页为 [v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)。旧开发仓库继续保持 Private；公开仓库使用独立新历史，不携带旧历史、备份分支或私人资料。素材权属、发行材料和版本状态见[发布状态](PUBLIC_RELEASE_STATUS.md)。
+公开仓库为 `ccr-39/MaaMiracleNikki-Public`，版本页为 [v0.1.2-rc.1](https://github.com/ccr-39/MaaMiracleNikki-Public/releases/tag/v0.1.2-rc.1)。发行材料和版本状态见[发布与下载](PUBLIC_RELEASE_STATUS.md)，素材权属见[素材说明](ASSET_NOTICE.md)。
 
 正式发布前需核对最终程序版本、Releases 附件名、更新器接受的资产格式、ZIP 根目录及清单。手动下载文件名与更新协议示例不能相互替代，须以该次正式发行实际采用的格式为准。旧版发行记录仅供追溯，不应直接作为当前发布操作步骤。
 
@@ -64,4 +64,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/build_windows.ps1 -Pyt
 
 输出包括 Windows ZIP、SHA256、13 份核验后的第三方源码归档及说明。此工具核对 EXE 内源码与当前源码、运行资源、模型、文件清单及归档哈希，不自动发布。`--runtime` 也可以使用已通过离线启动检查、且能逐模块证明与当前源码相同的运行目录；只改文档无需重复编译相同程序。
 
-公开源码只使用正式提交的文件树，不复制旧 Private 仓库的 Git 历史、备份分支或本地未跟踪文件。两仓库使用同一份正式源码；手动 Actions 构建支持这两个明确仓库名，分支和 Tag 推送不会自动发布。
+发布只使用正式提交的源码，排除个人配置、运行数据及本地未跟踪文件。手动 Actions 构建说明见 [GITHUB_ACTIONS_RELEASE.md](GITHUB_ACTIONS_RELEASE.md)。

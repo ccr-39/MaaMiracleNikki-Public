@@ -21,7 +21,7 @@
 
 Qt/PySide6 源码包中包含多个模块及构建路径，随附声明采用覆盖所选模块的集合，不表示本程序使用了全部模块。没有把商业授权文本作为已购商业许可的证明。
 
-MaaAgentBinary 是 MaaFramework 的独立 Android 代理工具依赖，并非 MaaAssistantArknights。现有固定 EXE 未包含本机 `MaaAgentBinary/` 包目录及其代理二进制，本次不补入、不改用新的输入或截图方式；源码安装时由 pip 获取该独立依赖，其 AGPL 不能改标 MIT。如未来另行捆绑这些代理，应逐个处理其源码与内含组件许可。
+MaaAgentBinary 是 MaaFramework 的独立 Android 代理工具依赖，并非 MaaAssistantArknights。当前 Windows 包未捆绑 `MaaAgentBinary/` 包目录及其代理二进制；源码安装时由 pip 获取该独立依赖，其 AGPL 不能改标 MIT。如未来另行捆绑这些代理，应逐个处理其源码与内含组件许可。
 
 ## 对应源码与补丁
 
@@ -33,4 +33,4 @@ MaaAgentBinary 是 MaaFramework 的独立 Android 代理工具依赖，并非 Ma
 
 Qt/PySide/Shiboken 和 Maa 采用外部 DLL/PYD；不禁止为调试修改库而进行必要逆向工程，可利用兼容 ABI 的库及应用源码、spec、依赖与构建脚本重新组合。详见[源码与库替换说明](../docs/SOURCE_ACCESS_AND_RELINKING.md)。原始完整性清单不作为禁止运行本地修改库的签名锁。
 
-[素材说明](../docs/ASSET_NOTICE.md)中的 22 张 PNG 授权仍待确认，公开发行不将它们纳入项目 MIT，也不代表已取得再分发授权。
+游戏素材的权属及未确认再分发授权状态见[素材说明](../docs/ASSET_NOTICE.md)。

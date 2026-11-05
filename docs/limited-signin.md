@@ -8,6 +8,6 @@
 
 领取后要求按钮消失或移动，不在同一按钮上重复提交。已领取、没有领取按钮时，按普通签到弹层的交互方式点击框外关闭。框外区域根据通用“活动”页头位置推导，避开礼包等付费文字；退出前两次重新确认页面及目标，退出后确认 HOME。禁止 Android Back 或关闭游戏；若旧版遗留了“是否退出游戏”对话框，仅在确认背后活动页后点击“取消”，再关闭活动。最多领取 10 次，每个等待最多 12 帧，业务总时限 90 秒，Pipeline 超时 120 秒；任何不确定点击均不自动重试。
 
-进入活动后的异常保存到安装目录的 `userdata/images/debug/pipeline/limited_signin/`，返回失败并接现有 `QJNN_SafeStop`。本次仅做离线验证，没有连接 ADB 或执行实际游戏任务；活动截图未随请求提供，活动适配通过合成 OCR、不同分辨率帧及异常状态重放验证，实际活动的动画和版式仍需后续使用验证。
+进入活动后的异常保存到安装目录的 `userdata/images/debug/pipeline/limited_signin/`，返回失败并接现有 `QJNN_SafeStop`。活动动画和版式变化可能影响识别，请在实际页面观察执行结果。
 
-相关实现位于 `agent/qjnn_limited_signin.py`、`assets/resource/pipeline/32_limited_signin.json` 和正式 GUI 配置/任务入口。历史测试与部署记录在备份分支中保留，不属于正式运行依赖。
+相关实现位于 `agent/qjnn_limited_signin.py`、`assets/resource/pipeline/32_limited_signin.json` 和正式 GUI 配置/任务入口。
